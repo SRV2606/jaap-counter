@@ -1,9 +1,11 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "routes": [
-    { "src": "/", "destination": "/about" },
-    { "src": "/about", "destination": "/about.html" },
-    { "src": "/privacy", "destination": "/privacy.html" }
+  "redirects": [
+    { "source": "/", "destination": "/about", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/privacy", "destination": "/privacy.html" }
   ]
 }
