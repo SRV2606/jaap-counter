@@ -3,26 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Jaap – Mantra & Meditation</title>
+  <title>About Jaap – Mantra &amp; Meditation</title>
   <meta name="description" content="Learn about Jaap – a calm and mindful digital companion for mantra repetition and spiritual reflection, developed by Daily App Studios." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --bg: #0d0c0e;
-      --surface: #141218;
       --border: rgba(255,255,255,0.07);
       --text-primary: #e8e3dc;
       --text-secondary: #8a8079;
       --accent: #c9a96e;
-      --accent-dim: rgba(201,169,110,0.15);
     }
-
     html { scroll-behavior: smooth; }
-
     body {
       background: var(--bg);
       color: var(--text-primary);
@@ -33,186 +28,94 @@
       display: flex;
       flex-direction: column;
     }
-
-    /* Subtle radial glow */
     body::before {
       content: '';
       position: fixed;
-      top: -20vh;
-      left: 50%;
+      top: -20vh; left: 50%;
       transform: translateX(-50%);
-      width: 80vw;
-      height: 60vh;
+      width: 80vw; height: 60vh;
       background: radial-gradient(ellipse, rgba(201,169,110,0.04) 0%, transparent 70%);
       pointer-events: none;
       z-index: 0;
     }
-
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      position: sticky; top: 0; z-index: 100;
       background: rgba(13,12,14,0.85);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       padding: 0 clamp(1.5rem, 5vw, 4rem);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      display: flex; align-items: center; justify-content: space-between;
       height: 60px;
     }
-
     .nav-brand {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
-      letter-spacing: 0.12em;
-      color: var(--accent);
-      text-decoration: none;
-      text-transform: uppercase;
+      font-size: 1.15rem; letter-spacing: 0.12em;
+      color: var(--accent); text-decoration: none; text-transform: uppercase;
     }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      color: var(--text-secondary); text-decoration: none;
+      font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase;
       transition: color 0.2s;
     }
-
-    .nav-links a:hover,
-    .nav-links a[aria-current="page"] {
-      color: var(--text-primary);
-    }
-
+    .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--text-primary); }
     main {
-      flex: 1;
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      max-width: 720px;
-      margin: 0 auto;
+      flex: 1; position: relative; z-index: 1;
+      width: 100%; max-width: 720px; margin: 0 auto;
       padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 2rem) clamp(4rem, 10vw, 8rem);
     }
-
     .eyebrow {
-      font-size: 0.72rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.2rem;
+      font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 1.2rem;
     }
-
     h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.8rem, 7vw, 4.5rem);
-      font-weight: 300;
-      line-height: 1.1;
-      color: var(--text-primary);
-      margin-bottom: 2.5rem;
+      font-size: clamp(2.8rem, 7vw, 4.5rem); font-weight: 300;
+      line-height: 1.1; color: var(--text-primary); margin-bottom: 2.5rem;
     }
-
     .divider {
-      width: 40px;
-      height: 1px;
-      background: var(--accent);
-      opacity: 0.5;
-      margin-bottom: 2.5rem;
+      width: 40px; height: 1px;
+      background: var(--accent); opacity: 0.5; margin-bottom: 2.5rem;
     }
-
-    p {
-      color: var(--text-primary);
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-      opacity: 0.88;
-    }
-
+    p { font-size: 1rem; margin-bottom: 1.5rem; opacity: 0.88; }
     .features-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      margin-bottom: 1rem;
-      margin-top: 0.5rem;
+      font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--text-secondary); margin-bottom: 1rem; margin-top: 0.5rem;
     }
-
     .features-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 0;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-      margin-bottom: 2rem;
+      border: 1px solid var(--border); border-radius: 8px;
+      overflow: hidden; margin-bottom: 2rem;
     }
-
     .feature-item {
       padding: 0.85rem 1.25rem;
       border-bottom: 1px solid var(--border);
-      font-size: 0.9rem;
-      color: var(--text-primary);
-      opacity: 0.82;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
+      font-size: 0.9rem; color: var(--text-primary); opacity: 0.82;
+      display: flex; align-items: center; gap: 0.75rem;
     }
-
     .feature-item:last-child { border-bottom: none; }
-
     .feature-item::before {
-      content: '';
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-      opacity: 0.7;
+      content: ''; width: 4px; height: 4px; border-radius: 50%;
+      background: var(--accent); flex-shrink: 0; opacity: 0.7;
     }
-
     .closing {
-      margin-top: 0.5rem;
-      padding-top: 2rem;
+      margin-top: 0.5rem; padding-top: 2rem;
       border-top: 1px solid var(--border);
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.8;
+      font-size: 0.9rem; color: var(--text-secondary); line-height: 1.8;
     }
-
     footer {
-      position: relative;
-      z-index: 1;
+      position: relative; z-index: 1;
       border-top: 1px solid var(--border);
       padding: 1.5rem clamp(1.5rem, 5vw, 4rem);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 0.5rem;
     }
-
-    footer span {
-      font-size: 0.75rem;
-      color: var(--text-secondary);
-    }
-
+    footer span { font-size: 0.75rem; color: var(--text-secondary); }
     footer a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 0.75rem;
-      transition: color 0.2s;
+      color: var(--text-secondary); text-decoration: none;
+      font-size: 0.75rem; transition: color 0.2s;
     }
-
     footer a:hover { color: var(--text-primary); }
-
-    @media (max-width: 480px) {
-      footer { flex-direction: column; align-items: flex-start; }
-    }
+    @media (max-width: 480px) { footer { flex-direction: column; align-items: flex-start; } }
   </style>
 </head>
 <body>
@@ -220,8 +123,8 @@
 <nav>
   <a href="/about" class="nav-brand">Jaap</a>
   <ul class="nav-links">
-    <li><a href="about.html" aria-current="page">About</a></li>
-    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="/about" aria-current="page">About</a></li>
+    <li><a href="/privacy">Privacy</a></li>
   </ul>
 </nav>
 
@@ -230,12 +133,10 @@
   <h1>About Jaap</h1>
   <div class="divider"></div>
 
-  <p>Jaap – Mantra &amp; Meditation is a calm and mindful digital companion designed to support focused mantra repetition and spiritual reflection.</p>
-
+  <p>Jaap &#8211; Mantra &amp; Meditation is a calm and mindful digital companion designed to support focused mantra repetition and spiritual reflection.</p>
   <p>Jaap helps users engage in mantra chanting using voice or touch-based interaction in a distraction-free environment. The app is built to encourage slow, intentional practice rather than performance or outcomes.</p>
 
   <p class="features-label">Jaap includes features such as</p>
-
   <div class="features-grid">
     <div class="feature-item">Voice-based mantra chanting</div>
     <div class="feature-item">Touch-based mala counting</div>
@@ -246,13 +147,12 @@
   </div>
 
   <p>Jaap is intended to support personal spiritual routines and mindfulness practices. It does not claim to provide medical, psychological, or guaranteed results. The app does not offer predictive astrology, health advice, or religious instruction.</p>
-
   <p class="closing">Jaap respects diverse spiritual paths and is designed for anyone seeking a calm and reflective mantra practice experience.</p>
 </main>
 
 <footer>
-  <span>© Daily App Studios · Sourav Kumar Shaw</span>
-  <a href="privacy.html">Privacy Policy</a>
+  <span>&#169; Daily App Studios &middot; Sourav Kumar Shaw</span>
+  <a href="/privacy">Privacy Policy</a>
 </footer>
 
 </body>
