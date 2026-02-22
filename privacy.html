@@ -114,7 +114,7 @@
     }
     .perm-label {
       font-weight: 400; color: var(--accent);
-      min-width: 130px; display: inline-block;
+      min-width: 160px; display: inline-block;
     }
     .contact-block {
       background: var(--accent-dim);
@@ -160,27 +160,33 @@
   <div class="divider"></div>
 
   <section>
-    <p>Daily App Studios built the Jaap &#8211; Mantra &amp; Meditation app as a free application. This page is used to inform users regarding policies on the collection, use, and disclosure of information.</p>
-    <p>User privacy is a core value of Jaap. The app is designed to collect only minimal data required for functionality and improvement.</p>
+    <p>Daily App Studios built the Jaap &#8211; Mantra &amp; Meditation app as a free application. This page informs users regarding our policies on the collection, use, and disclosure of information when using the app.</p>
+    <p>Protecting your privacy is a core value of Jaap. The app is designed to collect only the minimal data required for functionality, improvement, and advertising.</p>
   </section>
 
   <section>
     <h2>Information We Collect</h2>
-    <p class="sublabel">Jaap may collect limited, non-personal information, including</p>
+    <p class="sublabel">Jaap may collect the following information</p>
     <div class="list-group">
-      <div class="list-item">Anonymous app interaction data (via Firebase Analytics)</div>
+      <div class="list-item">Anonymous app interaction and usage data (via Firebase Analytics)</div>
       <div class="list-item">Crash and error reports (via Firebase Crashlytics)</div>
-      <div class="list-item">Device identifiers used for optional notifications (via Firebase Cloud Messaging)</div>
-      <div class="list-item">Approximate location data, collected on-device and used solely for feature improvement &#8212; this data is not transmitted to our servers or shared with third parties</div>
+      <div class="list-item">Device tokens used for optional push notifications (via Firebase Cloud Messaging)</div>
+      <div class="list-item">Device advertising identifier, used by Google AdMob to serve relevant advertisements</div>
+      <div class="list-item">Approximate location, collected on-device and used solely to improve app features such as the Hindu Calendar and Panchang. This data is not transmitted to or stored on our servers.</div>
+      <div class="list-item">Voice audio, captured when you use the voice-based mantra chanting feature. Audio is sent to Google&#8217;s Speech Recognition service for transcription. Jaap does not store or retain any audio recordings or transcription results.</div>
     </div>
     <p class="sublabel">Jaap does not collect</p>
     <div class="list-group negative">
-      <div class="list-item">Voice recordings</div>
-      <div class="list-item">Spoken mantra text</div>
-      <div class="list-item">Personal identity information</div>
-      <div class="list-item">Contacts</div>
+      <div class="list-item">Your name, email address, or any personal identity information</div>
+      <div class="list-item">Contacts or address book data</div>
       <div class="list-item">Health or medical data</div>
+      <div class="list-item">Payment or financial information</div>
     </div>
+  </section>
+
+  <section>
+    <h2>User-Created Content</h2>
+    <p>When you create a custom mantra using the Create Mantra feature, the text and any associated intention you enter are stored locally on your device only. This content is not transmitted to our servers or shared with any third party, except when you choose to use the AI enrichment feature, in which case the mantra text may be sent to Google Generative AI to generate additional context.</p>
   </section>
 
   <section>
@@ -188,29 +194,38 @@
     <p>Collected information is used solely to:</p>
     <div class="list-group">
       <div class="list-item">Improve app stability and performance</div>
-      <div class="list-item">Understand feature usage patterns</div>
-      <div class="list-item">Improve app features using on-device location context</div>
+      <div class="list-item">Understand feature usage patterns to improve the app</div>
+      <div class="list-item">Provide localised Hindu Calendar, Panchang, and auspicious date information using on-device location context</div>
+      <div class="list-item">Enable voice-based mantra counting by transcribing your spoken chants</div>
       <div class="list-item">Deliver optional app notifications</div>
-      <div class="list-item">Display relevant advertisements</div>
+      <div class="list-item">Display relevant advertisements via Google AdMob</div>
     </div>
   </section>
 
   <section>
     <h2>Third-Party Services</h2>
-    <p>Jaap uses the following third-party services:</p>
+    <p>Jaap uses the following third-party services. Each may collect data as described in their respective privacy policies.</p>
     <div class="list-group">
-      <div class="list-item">Firebase Analytics &#8211; for anonymous usage analytics</div>
-      <div class="list-item">Firebase Crashlytics &#8211; for crash and error reporting</div>
-      <div class="list-item">Firebase Cloud Messaging &#8211; for optional notifications</div>
-      <div class="list-item">Google AdMob &#8211; for serving in-app advertisements</div>
-      <div class="list-item">Google Generative AI &#8211; for powering Panchang, Rashi astrology, and Daily Hindu Calendar content</div>
+      <div class="list-item">Firebase Analytics &#8211; anonymous usage analytics</div>
+      <div class="list-item">Firebase Crashlytics &#8211; crash and error reporting</div>
+      <div class="list-item">Firebase Cloud Messaging &#8211; optional push notifications</div>
+      <div class="list-item">Google AdMob &#8211; in-app advertisements, including banner and rewarded video ads. AdMob may collect your device advertising identifier.</div>
+      <div class="list-item">Google Speech Recognition &#8211; transcribes voice audio for the mantra chanting feature. Audio is processed by Google and is subject to Google&#8217;s privacy policy. Jaap does not retain any audio or transcription data.</div>
+      <div class="list-item">Google Generative AI &#8211; powers Panchang, Rashi astrology, Daily Hindu Calendar content, and optional mantra enrichment</div>
     </div>
-    <p>These services may collect information as described in their respective privacy policies.</p>
   </section>
 
   <section>
     <h2>Advertising</h2>
-    <p>Jaap displays advertisements provided by Google AdMob. AdMob may use device identifiers and other non-personal data to serve contextually relevant ads. Jaap does not share personal data with advertisers. For more information on how Google uses data from apps that use its services, visit <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener" class="ext-link">Google&#8217;s Privacy &amp; Terms</a>.</p>
+    <p>Jaap displays advertisements provided by Google AdMob, including banner ads and rewarded video ads. Rewarded ads may be shown when you have reached the free limit for custom mantras; watching a rewarded ad allows you to continue using the feature.</p>
+    <p>AdMob may use your device advertising identifier and other non-personal data to serve contextually relevant ads. Jaap does not share personal data with advertisers. You can opt out of personalised advertising at any time through your device settings under <em>Google &rsaquo; Ads</em>.</p>
+    <p>For more information on how Google uses data from apps that use its services, visit <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener" class="ext-link">Google&#8217;s Privacy &amp; Terms</a>.</p>
+  </section>
+
+  <section>
+    <h2>Voice Recognition</h2>
+    <p>The voice-based mantra chanting feature uses Android&#8217;s SpeechRecognizer, which is powered by Google&#8217;s Speech Recognition service. When you chant a mantra aloud, your voice audio is transmitted to Google&#8217;s servers for transcription. The resulting text is used only to match your chant against the selected mantra and increment your count.</p>
+    <p>Jaap does not record, store, or retain any audio or transcription data. The audio is processed transiently by Google and is subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="ext-link">Google&#8217;s Privacy Policy</a>.</p>
   </section>
 
   <section>
@@ -220,41 +235,45 @@
       <div class="list-item">Panchang &#8211; daily Hindu almanac information</div>
       <div class="list-item">Rashi &#8211; zodiac and astrology guidance</div>
       <div class="list-item">Daily Hindu Calendar &#8211; auspicious dates, tithi, and festival information</div>
+      <div class="list-item">Custom Mantra Enrichment &#8211; optional additional context for mantras you create</div>
     </div>
-    <p>When you access these features, your query or request context (such as date, time, or selected preferences) may be sent to Google&#8217;s Generative AI services to generate a response. No personal identity information, voice data, or sensitive data is included in these requests.</p>
-    <p>Content generated by Google Generative AI is provided for informational and spiritual reference purposes only. Jaap does not guarantee the accuracy of AI-generated astrological or calendar content, and it should not be relied upon as authoritative religious, predictive, or professional guidance. Use of this feature is subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="ext-link">Google&#8217;s Privacy Policy</a>.</p>
+    <p>When you access these features, your request context (such as date, time, selected preferences, or mantra text) may be sent to Google&#8217;s Generative AI services to generate a response. No personal identity information, retained audio data, or sensitive personal data is included in these requests.</p>
+    <p>Content generated by Google Generative AI is provided for informational and spiritual reference only. Jaap does not guarantee the accuracy of AI-generated content, and it should not be relied upon as authoritative religious, predictive, or professional guidance. Use of these features is subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="ext-link">Google&#8217;s Privacy Policy</a>.</p>
   </section>
 
   <section>
     <h2>App Permissions</h2>
     <p>Jaap requests the following Android permissions to enable its features:</p>
     <div class="list-group">
-      <div class="list-item"><span class="perm-label">Notifications</span> To send optional app updates and reminders, which can be disabled in device settings at any time</div>
-      <div class="list-item"><span class="perm-label">Location</span> Used on-device to improve app features; not transmitted to our servers or shared with third parties</div>
-      <div class="list-item"><span class="perm-label">Microphone</span> To enable voice-based mantra chanting; voice input is processed locally and not recorded or stored</div>
-      <div class="list-item"><span class="perm-label">Internet</span> Required for analytics, crash reporting, ad delivery, AI-powered features, and notification services</div>
+      <div class="list-item"><span class="perm-label">Microphone</span> To enable voice-based mantra chanting. Audio is sent to Google&#8217;s Speech Recognition service for transcription and is not stored by Jaap.</div>
+      <div class="list-item"><span class="perm-label">Notifications</span> To send optional app updates and reminders. Can be disabled at any time in device settings.</div>
+      <div class="list-item"><span class="perm-label">Location</span> Used on-device to provide localised Hindu Calendar and Panchang information. Location data is not transmitted to our servers or shared with third parties.</div>
+      <div class="list-item"><span class="perm-label">Vibration</span> To provide haptic feedback during mantra chanting sessions, helping you maintain rhythm and awareness.</div>
+      <div class="list-item"><span class="perm-label">Internet</span> Required for analytics, crash reporting, ad delivery, AI-powered features, voice recognition, and notification services.</div>
+      <div class="list-item"><span class="perm-label">Network State</span> Used to check connectivity before making network requests, preventing unnecessary errors.</div>
     </div>
     <p>All permissions are used strictly for the purposes described above. You may revoke any permission at any time through your device&#8217;s app settings.</p>
   </section>
 
   <section>
     <h2>Notifications</h2>
-    <p>Jaap may send optional notifications related to app communication or updates. Notifications are entirely optional and can be disabled at any time through device settings.</p>
+    <p>Jaap may send optional notifications related to your practice, auspicious dates, or app updates. Notifications are entirely optional and can be disabled at any time through your device settings.</p>
   </section>
 
   <section>
     <h2>Data Security</h2>
-    <p>Jaap takes reasonable measures to protect user data. No sensitive or personal data is stored by the application. Location data is processed on-device only and is not transmitted to external servers.</p>
+    <p>Jaap takes reasonable measures to protect user data. No sensitive or personal data is stored by the application on our servers. Location data is processed on-device only. User-created content such as custom mantras is stored locally on your device.</p>
   </section>
 
   <section>
     <h2>Children&#8217;s Privacy</h2>
-    <p>Jaap is not directed at children under the age of 13. The app does not knowingly collect personal data from children.</p>
+    <p>Jaap is not directed at children under the age of 13. The app does not knowingly collect personal data from children. If you believe a child has provided personal information through the app, please contact us and we will take steps to remove it.</p>
   </section>
 
   <section>
     <h2>Changes to This Privacy Policy</h2>
-    <p>This Privacy Policy may be updated from time to time. Any changes will be reflected on this page.</p>
+    <p>This Privacy Policy may be updated from time to time. Any changes will be reflected on this page. We encourage you to review this page periodically.</p>
+    <p>This policy was last updated in 2025.</p>
   </section>
 
   <section>
