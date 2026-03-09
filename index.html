@@ -8,6 +8,31 @@
   <meta name="description"
     content="Experience the peace of daily mindfulness with Jaap. Featuring voice chanting, touch mala, daily Panchang, and accurate Horoscopes in English & Hindi." />
 
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+    import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAhMNX16Ub5QHq1gbEv4MDtgqoI29CEoCA",
+      authDomain: "jaap-counter-6b168.firebaseapp.com",
+      projectId: "jaap-counter-6b168",
+      storageBucket: "jaap-counter-6b168.firebasestorage.app",
+      messagingSenderId: "1090257832699",
+      appId: "1:1090257832699:web:0b6f464fe2029a5862fe5e",
+      measurementId: "G-90593ZL654"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    // Enhanced Global Tracking Function
+    window.trackEvent = function (eventName, params = {}) {
+      logEvent(analytics, eventName, params);
+      console.log(`[Firebase Analytics] Event: ${eventName}`, params);
+    };
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -47,7 +72,6 @@
       overflow-x: hidden;
     }
 
-    /* Background Glow */
     body::before {
       content: '';
       position: fixed;
@@ -124,9 +148,9 @@
       box-shadow: 0 4px 12px rgba(201, 169, 110, 0.2);
     }
 
-    /* Hero Section */
+    /* Hero */
     .hero {
-      padding: 160px clamp(1.5rem, 5vw, 4rem) 100px;
+      padding: 160px clamp(1.5rem, 5vw, 4rem) 80px;
       text-align: center;
       max-width: 900px;
       margin: 0 auto;
@@ -178,42 +202,213 @@
       line-height: 1.8;
     }
 
+    /* ── Waitlist Section ── */
+    .waitlist-wrap {
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto 2rem;
+    }
+
+    .waitlist-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 0.75rem;
+    }
+
+    .waitlist-form {
+      display: flex;
+      gap: 0;
+      border: 1px solid rgba(201, 169, 110, 0.35);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .waitlist-form:focus-within {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.1);
+    }
+
+    .waitlist-form input[type="email"] {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.04);
+      border: none;
+      outline: none;
+      padding: 0.9rem 1.2rem;
+      color: var(--text-primary);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 300;
+    }
+
+    .waitlist-form input[type="email"]::placeholder {
+      color: var(--text-secondary);
+      opacity: 0.6;
+    }
+
+    .waitlist-form button {
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      padding: 0.9rem 1.5rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .waitlist-form button:hover {
+      background: var(--accent-hover);
+    }
+
+    .waitlist-form button:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
+
+    .waitlist-subtext {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin-top: 0.6rem;
+      opacity: 0.7;
+    }
+
+    /* Success state */
+    .waitlist-success {
+      display: none;
+      background: rgba(201, 169, 110, 0.06);
+      border: 1px solid rgba(201, 169, 110, 0.25);
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      color: var(--accent);
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    /* OR divider */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      width: 100%;
+      max-width: 520px;
+      color: var(--text-secondary);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* Play Store CTA */
     .cta-group {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
       justify-content: center;
-      margin-bottom: 4rem;
+      width: 100%;
+      max-width: 520px;
     }
 
     .cta-primary {
       display: inline-flex;
       align-items: center;
       gap: 0.75rem;
-      background: var(--accent);
-      color: var(--bg);
+      background: transparent;
+      border: 1px solid rgba(201, 169, 110, 0.35);
+      color: var(--text-primary);
       text-decoration: none;
-      padding: 1rem 2rem;
-      border-radius: 6px;
-      font-size: 1rem;
-      font-weight: 500;
-      letter-spacing: 0.05em;
+      padding: 0.9rem 2rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
       transition: all 0.3s ease;
+      flex: 1;
+      justify-content: center;
     }
 
     .cta-primary:hover {
-      background: var(--accent-hover);
+      border-color: var(--accent);
+      color: var(--accent);
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(201, 169, 110, 0.25);
+      box-shadow: 0 8px 24px rgba(201, 169, 110, 0.12);
     }
 
     .play-icon {
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
       fill: currentColor;
     }
 
-    /* Features Grid */
+    /* Social proof nudge */
+    .social-proof {
+      margin-top: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+    }
+
+    .proof-dots {
+      display: flex;
+      gap: -4px;
+    }
+
+    .proof-dot {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid var(--bg);
+      background: rgba(201, 169, 110, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      margin-left: -6px;
+    }
+
+    .proof-dot:first-child {
+      margin-left: 0;
+    }
+
+    /* Language Banner */
+    .language-banner {
+      margin: 4rem auto;
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.03), transparent);
+    }
+
+    .language-banner p {
+      font-size: 1.1rem;
+      letter-spacing: 0.1em;
+      color: var(--text-primary);
+    }
+
+    .language-banner span {
+      color: var(--accent);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-style: italic;
+    }
+
+    /* Features */
     .features {
       padding: 60px clamp(1.5rem, 5vw, 4rem) 100px;
       max-width: 1200px;
@@ -251,7 +446,6 @@
       left: 0;
       width: 100%;
       height: 2px;
-      background: gradient(linear, left right, var(--accent), transparent);
       background: linear-gradient(90deg, var(--accent), transparent);
       opacity: 0;
       transition: opacity 0.4s ease;
@@ -286,30 +480,6 @@
       line-height: 1.7;
     }
 
-    /* Multi-Lingual Banner */
-    .language-banner {
-      margin: 4rem auto;
-      text-align: center;
-      padding: 2rem;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.03), transparent);
-    }
-
-    .language-banner p {
-      font-size: 1.1rem;
-      letter-spacing: 0.1em;
-      color: var(--text-primary);
-    }
-
-    .language-banner span {
-      color: var(--accent);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
-      font-style: italic;
-    }
-
-
     /* Footer */
     footer {
       border-top: 1px solid var(--border);
@@ -342,7 +512,6 @@
       opacity: 0.6;
     }
 
-    /* Animations */
     @keyframes fadeIn {
       0% {
         opacity: 0;
@@ -360,14 +529,9 @@
         display: none;
       }
 
-      .cta-group {
-        flex-direction: column;
-        width: 100%;
-      }
-
-      .cta-primary {
-        width: 100%;
-        justify-content: center;
+      .waitlist-form button {
+        padding: 0.9rem 1rem;
+        font-size: 0.8rem;
       }
     }
   </style>
@@ -381,7 +545,8 @@
       <li><a href="/about.html">About</a></li>
       <li><a href="/privacy.html">Privacy</a></li>
       <li><a href="https://play.google.com/store/apps/details?id=com.memefarm.jaap" target="_blank"
-          class="cta-button-small">Download App</a></li>
+          onclick="trackEvent('nav_download_click', {location: 'navbar'})" class="cta-button-small">Download App</a>
+      </li>
     </ul>
   </nav>
 
@@ -393,13 +558,53 @@
       authentic Mantra chanting, daily Panchang, and accurate Horoscopes in an incredibly simple, ad-free environment.
     </p>
 
+    <!-- ✅ WAITLIST FORM -->
+    <div class="waitlist-wrap">
+      <p class="waitlist-label">Join the early access waitlist</p>
+
+      <!--
+      ✅ HOW TO CONNECT THIS FORM:
+      1. Go to https://formspree.io and create a free account
+      2. Create a new form → copy your form ID (looks like: xpzgwqkr)
+      3. Replace YOUR_FORMSPREE_ID below with your actual form ID
+      That's it — emails will land in your Formspree inbox + your email.
+    -->
+      <form class="waitlist-form" id="waitlistForm" action="https://formspree.io/f/xlgpglqy" method="POST">
+        <input type="email" name="email" placeholder="Enter your email address" required
+          oninput="window.trackEvent('waitlist_signup_begin', { source: 'hero_form' })" />
+        <input type="hidden" name="_subject" value="New Jaap Waitlist Signup 🙏" />
+        <button type="submit" id="waitlistBtn">Get Early Access</button>
+      </form>
+
+      <div class="waitlist-success" id="waitlistSuccess">
+        🙏 You're on the list! We'll reach out as soon as Jaap launches.
+      </div>
+
+      <p class="waitlist-subtext">No spam. No sharing. Just a heads-up when we're live.</p>
+    </div>
+
+    <div class="divider">or</div>
+
+    <!-- Play Store CTA (secondary) -->
     <div class="cta-group">
-      <a href="https://play.google.com/store/apps/details?id=com.memefarm.jaap" target="_blank" class="cta-primary">
+      <a href="https://play.google.com/store/apps/details?id=com.memefarm.jaap" target="_blank" class="cta-primary"
+        onclick="trackEvent('hero_playstore_click', {location: 'hero'})">
         <svg class="play-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d="M4 2.87v18.26c0 .48.36.72.77.53l14.73-8.35c.42-.24.42-.64 0-.88L4.77 2.34c-.4-.2-.77.05-.77.53z" />
         </svg>
-        Download on Google Play
+        Already Available on Google Play
       </a>
+    </div>
+
+    <!-- Social Proof Nudge -->
+    <div class="social-proof">
+      <div class="proof-dots">
+        <div class="proof-dot">🇮🇳</div>
+        <div class="proof-dot">🇺🇸</div>
+        <div class="proof-dot">🇬🇧</div>
+        <div class="proof-dot">🇦🇺</div>
+      </div>
+      <span>Join devotees across India and the diaspora</span>
     </div>
   </header>
 
@@ -471,6 +676,77 @@
     </div>
     <p class="copyright">&copy; 2025 Daily App Studios. All rights reserved.</p>
   </footer>
+
+  <script>
+    // ── Waitlist form: AJAX submit so user stays on page ──
+    const form = document.getElementById('waitlistForm');
+    const btn = document.getElementById('waitlistBtn');
+    const successBox = document.getElementById('waitlistSuccess');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      btn.textContent = 'Joining...';
+      btn.disabled = true;
+
+      const email = form.querySelector('input[type="email"]').value;
+
+      // 📊 Track the signup attempt
+      window.trackEvent('waitlist_signup_attempt', {
+        email_domain: email.split('@')[1],
+        form_id: 'hero_waitlist'
+      });
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, _subject: 'New Jaap Waitlist Signup 🙏' })
+        });
+
+        if (res.ok) {
+          form.style.display = 'none';
+          successBox.style.display = 'block';
+          // 📊 Track successful conversion (Critical for Ads)
+          window.trackEvent('waitlist_signup_success', {
+            email_domain: email.split('@')[1],
+            conversion_type: 'waitlist_join'
+          });
+        } else {
+          btn.textContent = 'Try again';
+          btn.disabled = false;
+        }
+      } catch (err) {
+        btn.textContent = 'Try again';
+        btn.disabled = false;
+      }
+    });
+
+    // 📊 Track scroll depth (25%, 50%, 75%)
+    const depths = [25, 50, 75];
+    const fired = new Set();
+    window.addEventListener('scroll', () => {
+      const pct = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+      depths.forEach(d => {
+        if (pct >= d && !fired.has(d)) {
+          fired.add(d);
+          window.trackEvent('scroll_depth_reached', {
+            depth_percent: d,
+            page_path: window.location.pathname
+          });
+        }
+      });
+    });
+
+    // 📊 Track time on page (Engagement for Ads)
+    [30, 60, 120].forEach(sec => {
+      setTimeout(() => {
+        window.trackEvent('engagement_time_reached', {
+          seconds: sec,
+          engagement_level: sec >= 60 ? 'high' : 'medium'
+        });
+      }, sec * 1000);
+    });
+  </script>
 
 </body>
 
