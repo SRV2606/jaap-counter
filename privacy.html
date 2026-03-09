@@ -379,6 +379,9 @@
         <div class="list-item">Voice audio, captured when you use the voice-based mantra chanting feature. Audio is sent
           to Google&#8217;s Speech Recognition service for transcription. Jaap does not store or retain any audio
           recordings or transcription results.</div>
+        <div class="list-item">Device-based Identity (Hashed): Jaap generates a stable, device-scoped identifier using
+          your device&#8217;s Android ID, which is then SHA-256 hashed before being used for data synchronization. Your
+          original device ID is never transmitted.</div>
       </div>
       <p class="sublabel">Jaap does not collect</p>
       <div class="list-group negative">
@@ -419,6 +422,8 @@
         <div class="list-item">Firebase Analytics &#8211; anonymous usage analytics</div>
         <div class="list-item">Firebase Crashlytics &#8211; crash and error reporting</div>
         <div class="list-item">Firebase Cloud Messaging &#8211; optional push notifications</div>
+        <div class="list-item">Supabase &#8211; powers secure data synchronization for your mantras, sessions, and
+          profile data.</div>
         <div class="list-item">Google AdMob &#8211; in-app advertisements, including banner and rewarded video ads.
           AdMob may collect your device advertising identifier.</div>
         <div class="list-item">Google Speech Recognition &#8211; transcribes voice audio for the mantra chanting
@@ -427,6 +432,25 @@
         <div class="list-item">Google Generative AI &#8211; powers Panchang, Rashi astrology, Daily Hindu Calendar
           content, and optional mantra enrichment</div>
       </div>
+    </section>
+
+    <section>
+      <h2>Cloud Synchronization</h2>
+      <p>To ensure your spiritual journey is never lost, Jaap uses a background synchronization service powered by
+        Supabase. This service securely backs up the following data:</p>
+      <div class="list-group">
+        <div class="list-item"><span class="perm-label">Profile Information</span> Your display name is encrypted
+          on-device before being synced to ensure your identity remains private.</div>
+        <div class="list-item"><span class="perm-label">Mantra Progress</span> We sync your lifetime counts, current
+          streaks, and total chanting duration to keep your milestones accurate.</div>
+        <div class="list-item"><span class="perm-label">Custom Mantras</span> Any mantras you create (including their
+          titles and text) are synced to allow you to restore them if you reinstall the app.</div>
+        <div class="list-item"><span class="perm-label">Session Logs</span> We sync anonymous session data, including
+          the mantra practiced, duration, and count, for progress tracking.</div>
+      </div>
+      <p>All data transmitted to Supabase is associated with a hashed device identifier. This allows us to offer data
+        persistence without requiring a traditional login or collecting personal identification such as email or phone
+        numbers.</p>
     </section>
 
     <section>
