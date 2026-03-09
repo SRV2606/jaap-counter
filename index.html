@@ -6,13 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jaap – India's Most Trusted Mantra & Astrology App</title>
   <meta name="description"
-    content="Experience the peace of daily mindfulness with Jaap. Featuring voice chanting, touch mala, daily Panchang, and accurate Horoscopes in English & Hindi." />
+    content="Experience the peace of daily mindfulness with Jaap. Voice chanting, touch mala, daily Panchang, and accurate Horoscopes in English & Hindi." />
 
   <!-- Firebase SDK -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
     import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js";
-
     const firebaseConfig = {
       apiKey: "AIzaSyAhMNX16Ub5QHq1gbEv4MDtgqoI29CEoCA",
       authDomain: "jaap-counter-6b168.firebaseapp.com",
@@ -22,21 +21,17 @@
       appId: "1:1090257832699:web:0b6f464fe2029a5862fe5e",
       measurementId: "G-90593ZL654"
     };
-
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
-
-    // Enhanced Global Tracking Function
     window.trackEvent = function (eventName, params = {}) {
       logEvent(analytics, eventName, params);
-      console.log(`[Firebase Analytics] Event: ${eventName}`, params);
     };
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600&family=Noto+Sans+Devanagari:wght@600;700&display=swap"
     rel="stylesheet" />
 
   <style>
@@ -49,221 +44,346 @@
     }
 
     :root {
-      --bg: #0d0c0e;
-      --border: rgba(255, 255, 255, 0.07);
-      --text-primary: #e8e3dc;
-      --text-secondary: #8a8079;
-      --accent: #c9a96e;
-      --accent-hover: #e0bc7a;
-      --card-bg: rgba(255, 255, 255, 0.03);
+      --bg: #07060b;
+      --gold: #d4a853;
+      --gold-light: #f0c97a;
+      --gold-glow: rgba(212, 168, 83, 0.35);
+      --gold-subtle: rgba(212, 168, 83, 0.08);
+      --purple: #1a1433;
+      --purple-mid: #2a1f52;
+      --text: #ede8df;
+      --text-dim: #7e7569;
+      --text-mid: #b8b0a2;
+      --border: rgba(212, 168, 83, 0.12);
+      --border-dim: rgba(255, 255, 255, 0.06);
+      --card: rgba(255, 255, 255, 0.025);
     }
 
     html {
       scroll-behavior: smooth;
-      font-size: 16px;
     }
 
     body {
       background: var(--bg);
-      color: var(--text-primary);
-      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
       font-weight: 300;
-      line-height: 1.6;
       overflow-x: hidden;
+      line-height: 1.6;
     }
 
-    body::before {
-      content: '';
+    /* ── BACKGROUND ── */
+    #mandala-bg {
       position: fixed;
-      top: -20vh;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.18;
+    }
+
+    .glow-orb {
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .orb-1 {
+      width: 700px;
+      height: 700px;
+      top: -200px;
       left: 50%;
       transform: translateX(-50%);
-      width: 100vw;
-      height: 100vh;
-      background: radial-gradient(ellipse at top, rgba(201, 169, 110, 0.08) 0%, transparent 60%);
-      pointer-events: none;
-      z-index: -1;
+      background: radial-gradient(circle, rgba(100, 60, 200, 0.4) 0%, transparent 70%);
     }
 
-    /* Navigation */
+    .orb-2 {
+      width: 500px;
+      height: 500px;
+      bottom: 10%;
+      right: -100px;
+      background: radial-gradient(circle, rgba(212, 168, 83, 0.15) 0%, transparent 70%);
+    }
+
+    .orb-3 {
+      width: 400px;
+      height: 400px;
+      top: 40%;
+      left: -100px;
+      background: radial-gradient(circle, rgba(80, 40, 160, 0.25) 0%, transparent 70%);
+    }
+
+    /* ── NAV ── */
     nav {
       position: fixed;
       top: 0;
       width: 100%;
-      z-index: 100;
-      background: rgba(13, 12, 14, 0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      z-index: 1000;
+      padding: 0 clamp(1.5rem, 5vw, 5rem);
+      height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 70px;
+      background: rgba(7, 6, 11, 0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
     }
 
     .nav-brand {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      letter-spacing: 0.12em;
-      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
       text-decoration: none;
-      text-transform: uppercase;
-      font-weight: 600;
+    }
+
+    /* Logo image — cropped to show just the app icon part */
+    .nav-logo-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 0 14px rgba(212, 168, 83, 0.25), 0 0 28px rgba(180, 80, 20, 0.15);
+    }
+
+    .nav-logo-icon img {
+      /* The image has dark padding around the icon; zoom + shift to crop it */
+      width: 140%;
+      height: 140%;
+      margin: -12% 0 0 -14%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Wordmark: Devanagari ज + Latin ap, matching the glowing gold style of the logo text */
+    .nav-wordmark {
+      display: flex;
+      align-items: baseline;
+      gap: 0;
+      line-height: 1;
+    }
+
+    .nav-wordmark .w-dev {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-weight: 700;
+      font-size: 1.6rem;
+      background: linear-gradient(180deg, #f8dc88 0%, #d4890a 55%, #b86a04 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 8px rgba(220, 150, 20, 0.75)) drop-shadow(0 0 18px rgba(200, 110, 10, 0.4));
+    }
+
+    .nav-wordmark .w-lat {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1.55rem;
+      background: linear-gradient(180deg, #f8dc88 0%, #d4890a 55%, #b86a04 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 8px rgba(220, 150, 20, 0.75)) drop-shadow(0 0 18px rgba(200, 110, 10, 0.4));
     }
 
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 2.5rem;
       list-style: none;
       align-items: center;
     }
 
     .nav-links a {
-      color: var(--text-secondary);
+      color: var(--text-dim);
       text-decoration: none;
-      font-size: 0.85rem;
-      letter-spacing: 0.08em;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      transition: color 0.3s ease;
+      font-weight: 400;
+      transition: color 0.3s;
     }
 
     .nav-links a:hover {
-      color: var(--text-primary);
+      color: var(--text);
     }
 
-    .cta-button-small {
-      background: var(--accent);
-      color: var(--bg);
-      padding: 0.5rem 1.25rem;
-      border-radius: 4px;
-      font-weight: 500;
+    /* Glowing gold CTA button */
+    .nav-cta {
+      background: var(--gold);
+      color: #1a0e02 !important;
+      padding: 0.55rem 1.4rem;
+      border-radius: 6px;
+      font-weight: 600;
       font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      display: inline-block;
       transition: all 0.3s ease;
+      box-shadow: 0 0 16px var(--gold-glow), 0 0 32px rgba(212, 168, 83, 0.15);
     }
 
-    .cta-button-small:hover {
-      background: var(--accent-hover);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(201, 169, 110, 0.2);
+    .nav-cta.disabled {
+      background: #231f1a;
+      color: var(--text-dim) !important;
+      cursor: default;
+      pointer-events: none;
+      box-shadow: none;
+      border: 1px solid var(--border-dim);
+      opacity: 0.8;
     }
 
-    /* Hero */
+    .nav-cta.disabled:hover {
+      transform: none;
+    }
+
+    /* ── HERO ── */
     .hero {
-      padding: 160px clamp(1.5rem, 5vw, 4rem) 80px;
-      text-align: center;
-      max-width: 900px;
-      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      min-height: 100svh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      animation: fadeIn 1.2s ease-out forwards;
+      justify-content: center;
+      padding: 120px clamp(1.5rem, 5vw, 4rem) 80px;
+      text-align: center;
     }
 
-    .eyebrow {
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
+    .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
+      background: rgba(212, 168, 83, 0.07);
+      border: 1px solid rgba(212, 168, 83, 0.25);
+      border-radius: 100px;
+      padding: 0.4rem 1.1rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.8s ease both;
     }
 
-    .eyebrow::before,
-    .eyebrow::after {
-      content: '';
-      width: 24px;
-      height: 1px;
-      background: var(--accent);
-      opacity: 0.5;
+    .hero-badge .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: pulse-dot 2s infinite;
+    }
+
+    @keyframes pulse-dot {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.4;
+        transform: scale(0.7);
+      }
     }
 
     h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 8vw, 5rem);
+      font-size: clamp(3.2rem, 9vw, 6rem);
       font-weight: 300;
-      line-height: 1.1;
-      color: var(--text-primary);
-      margin-bottom: 1.5rem;
+      line-height: 1.05;
+      color: var(--text);
+      margin-bottom: 1.8rem;
+      animation: fadeUp 0.8s 0.15s ease both;
     }
 
-    h1 span {
-      color: var(--accent);
+    h1 em {
       font-style: italic;
+      color: var(--gold);
+      display: inline-block;
+      position: relative;
     }
 
-    .hero-subtitle {
-      font-size: clamp(1.1rem, 3vw, 1.25rem);
-      color: var(--text-secondary);
-      max-width: 600px;
-      margin: 0 auto 3rem;
-      line-height: 1.8;
+    h1 em::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
     }
 
-    /* ── Waitlist Section ── */
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: var(--text-mid);
+      max-width: 560px;
+      line-height: 1.9;
+      margin: 0 auto 3.5rem;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
+
+    /* ── WAITLIST ── */
     .waitlist-wrap {
       width: 100%;
-      max-width: 520px;
-      margin: 0 auto 2rem;
+      max-width: 500px;
+      margin: 0 auto 1.5rem;
+      animation: fadeUp 0.8s 0.45s ease both;
     }
 
     .waitlist-label {
-      font-size: 0.8rem;
-      letter-spacing: 0.12em;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--text-secondary);
-      margin-bottom: 0.75rem;
+      color: var(--text-dim);
+      margin-bottom: 0.8rem;
     }
 
     .waitlist-form {
       display: flex;
-      gap: 0;
-      border: 1px solid rgba(201, 169, 110, 0.35);
-      border-radius: 8px;
+      border: 1px solid rgba(212, 168, 83, 0.3);
+      border-radius: 10px;
       overflow: hidden;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      background: rgba(255, 255, 255, 0.03);
+      transition: border-color 0.3s, box-shadow 0.3s;
     }
 
     .waitlist-form:focus-within {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.1);
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(212, 168, 83, 0.1), 0 0 20px rgba(212, 168, 83, 0.08);
     }
 
     .waitlist-form input[type="email"] {
       flex: 1;
-      background: rgba(255, 255, 255, 0.04);
+      background: transparent;
       border: none;
       outline: none;
-      padding: 0.9rem 1.2rem;
-      color: var(--text-primary);
-      font-family: 'DM Sans', sans-serif;
+      padding: 1rem 1.3rem;
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
       font-size: 0.95rem;
-      font-weight: 300;
     }
 
-    .waitlist-form input[type="email"]::placeholder {
-      color: var(--text-secondary);
-      opacity: 0.6;
+    .waitlist-form input::placeholder {
+      color: var(--text-dim);
     }
 
     .waitlist-form button {
-      background: var(--accent);
-      color: var(--bg);
+      background: var(--gold);
+      color: #1a0e02;
       border: none;
-      padding: 0.9rem 1.5rem;
-      font-family: 'DM Sans', sans-serif;
+      padding: 1rem 1.6rem;
+      font-family: 'Outfit', sans-serif;
       font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
+      font-weight: 600;
+      letter-spacing: 0.04em;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: background 0.3s;
       white-space: nowrap;
     }
 
     .waitlist-form button:hover {
-      background: var(--accent-hover);
+      background: var(--gold-light);
     }
 
     .waitlist-form button:disabled {
@@ -271,256 +391,571 @@
       cursor: default;
     }
 
-    .waitlist-subtext {
-      font-size: 0.78rem;
-      color: var(--text-secondary);
-      margin-top: 0.6rem;
-      opacity: 0.7;
-    }
-
-    /* Success state */
     .waitlist-success {
       display: none;
-      background: rgba(201, 169, 110, 0.06);
-      border: 1px solid rgba(201, 169, 110, 0.25);
-      border-radius: 8px;
-      padding: 1rem 1.5rem;
-      color: var(--accent);
+      background: rgba(212, 168, 83, 0.07);
+      border: 1px solid rgba(212, 168, 83, 0.2);
+      border-radius: 10px;
+      padding: 1.1rem 1.5rem;
+      color: var(--gold);
       font-size: 0.95rem;
       text-align: center;
     }
 
-    /* OR divider */
-    .divider {
+    .waitlist-note {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      margin-top: 0.6rem;
+    }
+
+    /* ── OR DIVIDER ── */
+    .or-divider {
       display: flex;
       align-items: center;
       gap: 1rem;
-      margin: 1.5rem 0;
+      max-width: 500px;
       width: 100%;
-      max-width: 520px;
-      color: var(--text-secondary);
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
+      margin: 1.5rem auto;
+      color: var(--text-dim);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
+      animation: fadeUp 0.8s 0.5s ease both;
     }
 
-    .divider::before,
-    .divider::after {
+    .or-divider::before,
+    .or-divider::after {
       content: '';
       flex: 1;
       height: 1px;
-      background: var(--border);
+      background: var(--border-dim);
     }
 
-    /* Play Store CTA */
-    .cta-group {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      width: 100%;
-      max-width: 520px;
-    }
-
-    .cta-primary {
+    /* ── PLAY STORE BUTTON ── */
+    .playstore-btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.75rem;
-      background: transparent;
-      border: 1px solid rgba(201, 169, 110, 0.35);
-      color: var(--text-primary);
+      gap: 0.85rem;
+      border: 1px solid var(--border);
+      color: var(--text);
       text-decoration: none;
-      padding: 0.9rem 2rem;
-      border-radius: 8px;
+      padding: 0.95rem 2rem;
+      border-radius: 10px;
       font-size: 0.95rem;
       font-weight: 400;
-      letter-spacing: 0.04em;
-      transition: all 0.3s ease;
-      flex: 1;
-      justify-content: center;
+      transition: all 0.3s;
+      background: var(--card);
+      animation: fadeUp 0.8s 0.55s ease both;
     }
 
-    .cta-primary:hover {
-      border-color: var(--accent);
-      color: var(--accent);
+    .playstore-btn:hover {
+      border-color: rgba(212, 168, 83, 0.4);
+      color: var(--gold);
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(201, 169, 110, 0.12);
+      box-shadow: 0 8px 28px rgba(212, 168, 83, 0.1);
+    }
+
+    .playstore-btn.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+      filter: grayscale(1);
     }
 
     .play-icon {
-      width: 18px;
-      height: 18px;
+      width: 17px;
+      height: 17px;
       fill: currentColor;
     }
 
-    /* Social proof nudge */
+    /* ── SOCIAL PROOF ── */
     .social-proof {
-      margin-top: 3rem;
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      color: var(--text-secondary);
+      gap: 0.9rem;
+      margin-top: 3.5rem;
+      color: var(--text-dim);
       font-size: 0.82rem;
+      animation: fadeUp 0.8s 0.65s ease both;
     }
 
-    .proof-dots {
+    .proof-avatars {
       display: flex;
-      gap: -4px;
     }
 
-    .proof-dot {
-      width: 28px;
-      height: 28px;
+    .proof-avatar {
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       border: 2px solid var(--bg);
-      background: rgba(201, 169, 110, 0.15);
+      background: linear-gradient(135deg, var(--purple-mid), var(--purple));
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.7rem;
-      margin-left: -6px;
+      font-size: 0.75rem;
+      margin-left: -7px;
     }
 
-    .proof-dot:first-child {
+    .proof-avatar:first-child {
       margin-left: 0;
     }
 
-    /* Language Banner */
-    .language-banner {
-      margin: 4rem auto;
-      text-align: center;
-      padding: 2rem;
+    .proof-stars {
+      color: var(--gold);
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+    }
+
+    /* ── MARQUEE STRIP ── */
+    .strip {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
-      background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.03), transparent);
+      padding: 1rem 0;
+      background: linear-gradient(90deg, transparent, rgba(212, 168, 83, 0.03), transparent);
     }
 
-    .language-banner p {
-      font-size: 1.1rem;
+    .strip-track {
+      display: flex;
+      gap: 3rem;
+      animation: marquee 30s linear infinite;
+      white-space: nowrap;
+    }
+
+    .strip-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.82rem;
       letter-spacing: 0.1em;
-      color: var(--text-primary);
+      color: var(--text-dim);
     }
 
-    .language-banner span {
-      color: var(--accent);
+    .strip-item span {
+      color: var(--gold);
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
-      font-style: italic;
+      font-size: 1rem;
     }
 
-    /* Features */
-    .features {
-      padding: 60px clamp(1.5rem, 5vw, 4rem) 100px;
-      max-width: 1200px;
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* ── FEATURES SECTION ── */
+    .section {
+      position: relative;
+      z-index: 1;
+      padding: 100px clamp(1.5rem, 5vw, 5rem);
+      max-width: 1300px;
       margin: 0 auto;
+    }
+
+    .section-eyebrow {
+      text-align: center;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    .section-eyebrow::before,
+    .section-eyebrow::after {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.4;
     }
 
     .section-title {
       text-align: center;
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 5vw, 3rem);
-      margin-bottom: 4rem;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
       font-weight: 300;
+      margin-bottom: 1rem;
+      color: var(--text);
     }
 
-    .grid {
+    .section-desc {
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 1rem;
+      max-width: 480px;
+      margin: 0 auto 5rem;
+      line-height: 1.8;
+    }
+
+    /* ── FEATURE CARDS ── */
+    .features-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
     }
 
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
+    .feat-card {
+      background: var(--card);
+      border: 1px solid var(--border-dim);
+      border-radius: 16px;
       padding: 2.5rem 2rem;
-      transition: all 0.4s ease;
       position: relative;
       overflow: hidden;
+      transition: all 0.4s ease;
+      cursor: default;
     }
 
-    .card::before {
+    .feat-card::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, var(--accent), transparent);
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
       opacity: 0;
-      transition: opacity 0.4s ease;
+      transition: opacity 0.4s;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(201, 169, 110, 0.3);
+    .feat-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at top left, rgba(212, 168, 83, 0.05), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s;
     }
 
-    .card:hover::before {
+    .feat-card:hover {
+      border-color: rgba(212, 168, 83, 0.25);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .feat-card:hover::before,
+    .feat-card:hover::after {
       opacity: 1;
     }
 
-    .card-icon {
+    .feat-icon {
       font-size: 2rem;
-      color: var(--accent);
       margin-bottom: 1.5rem;
+      display: block;
+      position: relative;
+      z-index: 1;
     }
 
-    .card h3 {
+    .feat-card h3 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
+      font-size: 1.45rem;
       font-weight: 400;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+      position: relative;
+      z-index: 1;
     }
 
-    .card p {
-      color: var(--text-secondary);
+    .feat-card p {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      line-height: 1.75;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Large 2-col card */
+    .feat-card.large {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      padding: 3rem;
+    }
+
+    .feat-card.large .feat-content h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .feat-card.large .feat-content p {
       font-size: 0.95rem;
-      line-height: 1.7;
     }
 
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 3rem clamp(1.5rem, 5vw, 4rem);
+    .feat-card.large .feat-visual {
+      aspect-ratio: 9/16;
+      max-height: 380px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--purple);
+    }
+
+    .feat-card.large .feat-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    /* ── SCREENSHOTS ── */
+    .showcase {
+      position: relative;
+      z-index: 1;
+      padding: 0 clamp(1.5rem, 5vw, 5rem) 100px;
+    }
+
+    .screenshots-scroll {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+      scrollbar-width: none;
+    }
+
+    .screenshots-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .screenshot-item {
+      flex: 0 0 220px;
+      height: 480px;
+      /* Fixed height based on 2nd image approx */
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border-dim);
+      transition: all 0.4s;
+      background: var(--purple);
+    }
+
+    .screenshot-item:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: var(--border);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+    }
+
+    .screenshot-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+
+    /* ── LANGUAGE SECTION ── */
+    .lang-section {
+      position: relative;
+      z-index: 1;
       text-align: center;
+      padding: 80px clamp(1.5rem, 5vw, 4rem);
+      border-top: 1px solid var(--border-dim);
+      border-bottom: 1px solid var(--border-dim);
+    }
+
+    .lang-pills {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .lang-pill {
+      background: var(--gold-subtle);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 0.5rem 1.4rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--gold);
+    }
+
+    /* ── BOTTOM CTA ── */
+    .cta-section {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 120px clamp(1.5rem, 5vw, 4rem);
+      overflow: hidden;
+    }
+
+    .cta-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(100, 60, 200, 0.2) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .cta-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-section p {
+      color: var(--text-mid);
+      max-width: 480px;
+      margin: 0 auto 3rem;
+      line-height: 1.8;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #1a0e02;
+      padding: 1rem 2.5rem;
+      border-radius: 10px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 0 24px var(--gold-glow), 0 0 48px rgba(212, 168, 83, 0.12);
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+      box-shadow: 0 0 32px var(--gold-glow), 0 0 64px rgba(212, 168, 83, 0.18);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      padding: 1rem 2.5rem;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 400;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn-outline:hover {
+      border-color: rgba(212, 168, 83, 0.3);
+      color: var(--gold);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border-dim);
+      padding: 3.5rem clamp(1.5rem, 5vw, 5rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
     }
 
     .footer-links {
       display: flex;
       gap: 2rem;
-      justify-content: center;
-      margin-bottom: 2rem;
+      flex-wrap: wrap;
     }
 
     footer a {
-      color: var(--text-secondary);
+      color: var(--text-dim);
       text-decoration: none;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       letter-spacing: 0.05em;
       transition: color 0.3s;
     }
 
     footer a:hover {
-      color: var(--text-primary);
+      color: var(--text);
     }
 
     .copyright {
-      font-size: 0.8rem;
-      color: var(--text-secondary);
-      opacity: 0.6;
+      color: var(--text-dim);
+      font-size: 0.78rem;
+      opacity: 0.55;
+      width: 100%;
+      text-align: center;
+      margin-top: 1rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-dim);
     }
 
-    @keyframes fadeIn {
-      0% {
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(24px);
       }
 
-      100% {
+      to {
         opacity: 1;
         transform: translateY(0);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .om-deco {
+      display: inline-block;
+      font-size: 1.4rem;
+      opacity: 0.5;
+      vertical-align: middle;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .feat-card.large {
+        grid-column: span 1;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .feat-card.large .feat-visual {
+        max-height: 260px;
       }
     }
 
@@ -529,8 +964,15 @@
         display: none;
       }
 
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 500px) {
       .waitlist-form button {
-        padding: 0.9rem 1rem;
+        padding: 1rem 1rem;
         font-size: 0.8rem;
       }
     }
@@ -539,215 +981,338 @@
 
 <body>
 
+  <!-- Background -->
+  <canvas id="mandala-bg"></canvas>
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+  <div class="glow-orb orb-3"></div>
+
+  <!-- ── NAV ── -->
   <nav>
-    <a href="/" class="nav-brand">Jaap</a>
+    <a href="/" class="nav-brand">
+      <div class="nav-logo-icon">
+        <img src="jaap_logo_renewed.png" alt="Jaap" />
+      </div>
+      <div class="nav-wordmark">
+        <span class="w-dev">ज</span><span class="w-lat">ap</span>
+      </div>
+    </a>
     <ul class="nav-links">
       <li><a href="/about.html">About</a></li>
       <li><a href="/privacy.html">Privacy</a></li>
-      <li><a href="https://play.google.com/store/apps/details?id=com.memefarm.jaap" target="_blank"
-          onclick="trackEvent('nav_download_click', {location: 'navbar'})" class="cta-button-small">Download App</a>
+      <li>
+        <a href="#" class="nav-cta disabled" onclick="return false;">
+          Coming Soon
+        </a>
       </li>
     </ul>
   </nav>
 
+  <!-- ── HERO ── -->
   <header class="hero">
-    <div class="eyebrow">Your Digital Sanctuary</div>
-    <h1>Temple Peace. <br><span>Anywhere in the World.</span></h1>
-    <p class="hero-subtitle">
-      Whether you are in a Tier-2 city in India or living abroad as an NRI, stay connected to your roots. Experience
-      authentic Mantra chanting, daily Panchang, and accurate Horoscopes in an incredibly simple, ad-free environment.
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Now Available · India &amp; Worldwide
+    </div>
+
+    <h1>
+      Temple Peace.<br>
+      <em>Anywhere in the World.</em>
+    </h1>
+
+    <p class="hero-sub">
+      Whether you're in a Tier-2 city or living abroad as an NRI — stay connected to your roots with authentic Mantra
+      chanting, daily Panchang, and Vedic astrology.
     </p>
 
-    <!-- ✅ WAITLIST FORM -->
+    <!-- Waitlist Form -->
     <div class="waitlist-wrap">
       <p class="waitlist-label">Join the early access waitlist</p>
-
-      <!--
-      ✅ HOW TO CONNECT THIS FORM:
-      1. Go to https://formspree.io and create a free account
-      2. Create a new form → copy your form ID (looks like: xpzgwqkr)
-      3. Replace YOUR_FORMSPREE_ID below with your actual form ID
-      That's it — emails will land in your Formspree inbox + your email.
-    -->
       <form class="waitlist-form" id="waitlistForm" action="https://formspree.io/f/xlgpglqy" method="POST">
         <input type="email" name="email" placeholder="Enter your email address" required
           oninput="window.trackEvent('waitlist_signup_begin', { source: 'hero_form' })" />
         <input type="hidden" name="_subject" value="New Jaap Waitlist Signup 🙏" />
         <button type="submit" id="waitlistBtn">Get Early Access</button>
       </form>
-
       <div class="waitlist-success" id="waitlistSuccess">
-        🙏 You're on the list! We'll reach out as soon as Jaap launches.
+        🙏 You're on the list! We'll be in touch when Jaap launches.
       </div>
-
-      <p class="waitlist-subtext">No spam. No sharing. Just a heads-up when we're live.</p>
+      <p class="waitlist-note">No spam. No sharing. Just a heads-up when we go live.</p>
     </div>
 
-    <div class="divider">or</div>
+    <div class="or-divider">or</div>
 
-    <!-- Play Store CTA (secondary) -->
-    <div class="cta-group">
-      <a href="https://play.google.com/store/apps/details?id=com.memefarm.jaap" target="_blank" class="cta-primary"
-        onclick="trackEvent('hero_playstore_click', {location: 'hero'})">
-        <svg class="play-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 2.87v18.26c0 .48.36.72.77.53l14.73-8.35c.42-.24.42-.64 0-.88L4.77 2.34c-.4-.2-.77.05-.77.53z" />
-        </svg>
-        Already Available on Google Play
-      </a>
-    </div>
+    <a href="#" class="playstore-btn disabled" onclick="return false;">
+      <svg class="play-icon" viewBox="0 0 24 24">
+        <path d="M4 2.87v18.26c0 .48.36.72.77.53l14.73-8.35c.42-.24.42-.64 0-.88L4.77 2.34c-.4-.2-.77.05-.77.53z" />
+      </svg>
+      Coming Soon to Play Store
+    </a>
 
-    <!-- Social Proof Nudge -->
     <div class="social-proof">
-      <div class="proof-dots">
-        <div class="proof-dot">🇮🇳</div>
-        <div class="proof-dot">🇺🇸</div>
-        <div class="proof-dot">🇬🇧</div>
-        <div class="proof-dot">🇦🇺</div>
+      <div class="proof-avatars">
+        <div class="proof-avatar">🇮🇳</div>
+        <div class="proof-avatar">🇺🇸</div>
+        <div class="proof-avatar">🇬🇧</div>
+        <div class="proof-avatar">🇦🇺</div>
+        <div class="proof-avatar">🇨🇦</div>
       </div>
-      <span>Join devotees across India and the diaspora</span>
+      <div>
+        <div class="proof-stars">★★★★★</div>
+        <div>Loved by devotees across India &amp; the diaspora</div>
+      </div>
     </div>
   </header>
 
-  <div class="language-banner">
-    <p>Available in <span>English</span> &amp; <span>हिन्दी (Hindi)</span></p>
+  <!-- ── MARQUEE STRIP ── -->
+  <div class="strip">
+    <div class="strip-track" id="stripTrack"></div>
   </div>
 
-  <section class="features">
-    <h2 class="section-title">Designed for Absolute Simplicity</h2>
-    <div class="grid">
+  <!-- ── FEATURES ── -->
+  <section class="section">
+    <div class="section-eyebrow reveal">Core Features</div>
+    <h2 class="section-title reveal">Designed for Absolute Simplicity</h2>
+    <p class="section-desc reveal">Everything you need for a consistent, meaningful spiritual practice — elegantly in
+      one place.</p>
 
-      <div class="card">
-        <div class="card-icon">🎙️</div>
-        <h3>Voice & Touch Mala</h3>
-        <p>No complicated UI to learn. Simply touch the screen to count, or chant aloud and let our advanced Voice
-          Recognition count your Jaaps automatically.</p>
+    <div class="features-grid">
+
+      <!-- Large hero feature card -->
+      <div class="feat-card large reveal">
+        <div class="feat-content">
+          <span class="feat-icon">🎙️</span>
+          <h3>Hands-Free Voice Chanting</h3>
+          <p>Simply chant aloud and our advanced AI counts every Jaap automatically. No tapping, no distractions — just
+            pure devotion. Or switch to Touch Mala mode for the traditional bead-counting feel.</p>
+        </div>
+        <div class="feat-visual">
+          <img src="screenshot2.png" alt="Voice chanting interface" />
+        </div>
       </div>
 
-      <div class="card">
-        <div class="card-icon">🕉️</div>
+      <div class="feat-card reveal">
+        <span class="feat-icon">🕉️</span>
         <h3>Daily Panchang</h3>
-        <p>Plan your day according to the stars. Get highly accurate daily Panchang and Auspicious timings right on your
-          phone, tailored directly to your location.</p>
+        <p>Highly accurate daily Panchang and auspicious timings tailored to your exact location. Plan your day
+          according to the cosmos.</p>
       </div>
 
-      <div class="card">
-        <div class="card-icon">✨</div>
+      <div class="feat-card reveal">
+        <span class="feat-icon">✨</span>
         <h3>Your Horoscope</h3>
-        <p>Read beautifully generated daily Horoscopes and remedies. Stay connected to traditional Vedic astrology no
-          matter which country you reside in.</p>
+        <p>Beautifully crafted daily Horoscopes and personalized Vedic remedies. Stay connected to traditional astrology
+          wherever you live in the world.</p>
       </div>
 
-      <div class="card">
-        <div class="card-icon">📅</div>
-        <h3>Hindu Calendar</h3>
-        <p>Access a comprehensive Hindu Calendar instantly. Never miss an important date, fast (vrat), or festival with
-          our detailed and localized calendar view.</p>
+      <div class="feat-card reveal">
+        <span class="feat-icon">📿</span>
+        <h3>Huge Mantra Library</h3>
+        <p>Explore and chant ancient mantras from our growing library. Full Sanskrit text, transliteration, and deep
+          meanings — all at your fingertips.</p>
       </div>
 
-      <div class="card">
-        <div class="card-icon">✍️</div>
+      <div class="feat-card reveal">
+        <span class="feat-icon">✍️</span>
         <h3>Create Your Mantra</h3>
-        <p>Personalize your practice. Create and save your own unique mantras, and even use optional AI to generate
-          deeper context and intentions for your chants.</p>
+        <p>Personalize your practice. Create and save your own unique mantras, with optional AI to generate deeper
+          context and intentions for your chants.</p>
       </div>
 
-      <div class="card">
-        <div class="card-icon">🔔</div>
+      <div class="feat-card reveal">
+        <span class="feat-icon">📅</span>
+        <h3>Hindu Calendar</h3>
+        <p>A comprehensive Hindu Calendar at a glance. Never miss an important vrat, festival, or sacred observance with
+          our detailed, localized view.</p>
+      </div>
+
+      <div class="feat-card reveal">
+        <span class="feat-icon">🔔</span>
         <h3>Gentle Reminders</h3>
-        <p>Stay on track with your spiritual journey. Receive timely, unobtrusive notifications for auspicious timings,
-          planetary shifts, and daily Panchang updates.</p>
+        <p>Timely, unobtrusive notifications for auspicious timings, planetary shifts, and daily Panchang updates to
+          keep your practice on track.</p>
       </div>
 
-      <div class="card">
-        <div class="card-icon">🔒</div>
+      <div class="feat-card reveal">
+        <span class="feat-icon">🔒</span>
         <h3>100% Private</h3>
-        <p>Your devotion is profoundly personal. Your mantras, voice recordings, and location data never leave your
-          device. We respect your spiritual journey.</p>
+        <p>Your mantras, voice recordings, and location data never leave your device. Your spiritual journey is deeply
+          personal — we protect it completely.</p>
       </div>
 
     </div>
   </section>
 
+  <!-- ── SCREENSHOTS SHOWCASE ── -->
+  <div class="showcase">
+    <div class="section-eyebrow reveal" style="justify-content:flex-start; margin-bottom:2rem;">
+      See It In Action
+      <span style="font-size:0.7rem; text-transform:none; letter-spacing:0; color: var(--text-dim);">— scroll to explore
+        →</span>
+    </div>
+    <div class="screenshots-scroll">
+      <div class="screenshot-item"><img src="screenshot5.png" alt="Mantra Library" /></div>
+      <div class="screenshot-item"><img src="screenshot3.png" alt="Personalize Your Practice" /></div>
+      <div class="screenshot-item"><img src="screenshot1.png" alt="Daily Cosmic Guide" /></div>
+      <div class="screenshot-item"><img src="screenshot2.png" alt="Daily Vedic Wisdom" /></div>
+      <div class="screenshot-item"><img src="screenshot7.png" alt="Touch Mala" /></div>
+    </div>
+  </div>
+
+  <!-- ── LANGUAGE SECTION ── -->
+  <div class="lang-section reveal">
+    <div class="section-eyebrow">Bilingual Experience</div>
+    <h2 class="section-title" style="font-size:clamp(1.8rem,4vw,2.8rem); margin-bottom:0.5rem;">Available In</h2>
+    <div class="lang-pills">
+      <span class="lang-pill">English</span>
+      <span class="lang-pill">हिन्दी</span>
+    </div>
+  </div>
+
+  <!-- ── BOTTOM CTA ── -->
+  <div class="cta-section">
+    <div class="cta-bg"></div>
+    <div class="section-eyebrow reveal">Begin Your Journey</div>
+    <h2 class="reveal">Start Your Daily Jaap <span class="om-deco">ॐ</span></h2>
+    <p class="reveal">Join thousands of devotees building a consistent spiritual practice with Jaap every single day.
+    </p>
+    <div class="cta-btns reveal">
+      <a href="#" class="btn-gold disabled" style="opacity: 0.5; pointer-events: none; filter: grayscale(1);"
+        onclick="return false;">
+        Coming Soon
+      </a>
+      <a href="#" class="btn-outline"
+        onclick="event.preventDefault(); window.scrollTo({top:0,behavior:'smooth'}); setTimeout(()=>document.querySelector('.waitlist-form input').focus(),600);">
+        Join Waitlist
+      </a>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
   <footer>
+    <div>
+      <div class="footer-brand">Jaap</div>
+      <div style="font-size:0.75rem; color:var(--text-dim); margin-top:0.3rem;">Daily App Studios</div>
+    </div>
     <div class="footer-links">
-      <a href="/about.html">About Jaap</a>
+      <a href="/about.html">About</a>
       <a href="/privacy.html">Privacy Policy</a>
-      <a href="mailto:sourav.kr.shaw+jaap.support@gmail.com">Contact Support</a>
+      <a href="mailto:sourav.kr.shaw+jaap.support@gmail.com">Support</a>
     </div>
     <p class="copyright">&copy; 2025 Daily App Studios. All rights reserved.</p>
   </footer>
 
   <script>
-    // ── Waitlist form: AJAX submit so user stays on page ──
+    // ── Waitlist AJAX ──
     const form = document.getElementById('waitlistForm');
     const btn = document.getElementById('waitlistBtn');
-    const successBox = document.getElementById('waitlistSuccess');
+    const box = document.getElementById('waitlistSuccess');
 
-    form.addEventListener('submit', async function (e) {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       btn.textContent = 'Joining...';
       btn.disabled = true;
-
       const email = form.querySelector('input[type="email"]').value;
-
-      // 📊 Track the signup attempt
-      window.trackEvent('waitlist_signup_attempt', {
-        email_domain: email.split('@')[1],
-        form_id: 'hero_waitlist'
-      });
-
+      window.trackEvent('waitlist_signup_attempt', { email_domain: email.split('@')[1] });
       try {
         const res = await fetch(form.action, {
           method: 'POST',
           headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, _subject: 'New Jaap Waitlist Signup 🙏' })
         });
-
         if (res.ok) {
           form.style.display = 'none';
-          successBox.style.display = 'block';
-          // 📊 Track successful conversion (Critical for Ads)
-          window.trackEvent('waitlist_signup_success', {
-            email_domain: email.split('@')[1],
-            conversion_type: 'waitlist_join'
-          });
-        } else {
-          btn.textContent = 'Try again';
-          btn.disabled = false;
-        }
-      } catch (err) {
-        btn.textContent = 'Try again';
-        btn.disabled = false;
-      }
+          box.style.display = 'block';
+          window.trackEvent('waitlist_signup_success', { email_domain: email.split('@')[1] });
+        } else { btn.textContent = 'Try again'; btn.disabled = false; }
+      } catch { btn.textContent = 'Try again'; btn.disabled = false; }
     });
 
-    // 📊 Track scroll depth (25%, 50%, 75%)
+    // ── Marquee strip ──
+    const stripItems = [
+      { en: 'Daily Panchang', hi: 'पंचांग' },
+      { en: 'Voice Chanting', hi: 'जाप' },
+      { en: 'Sacred Mantras', hi: 'मंत्र' },
+      { en: 'Hindu Calendar', hi: 'कैलेंडर' },
+      { en: 'Your Horoscope', hi: 'राशिफल' },
+      { en: 'Touch Mala', hi: 'माला' },
+      { en: 'Auspicious Timings', hi: 'शुभ मुहूर्त' },
+      { en: 'Daily Guidance', hi: 'मार्गदर्शन' },
+    ];
+    const track = document.getElementById('stripTrack');
+    [...stripItems, ...stripItems].forEach(it => {
+      const el = document.createElement('div');
+      el.className = 'strip-item';
+      el.innerHTML = `<span>ॐ</span> ${it.en} · <span>${it.hi}</span>`;
+      track.appendChild(el);
+    });
+
+    // ── Scroll reveal ──
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+    // ── Mandala canvas background ──
+    (function () {
+      const c = document.getElementById('mandala-bg');
+      const ctx = c.getContext('2d');
+      let W, H, frame = 0;
+
+      function resize() { W = c.width = window.innerWidth; H = c.height = window.innerHeight; }
+      resize();
+      window.addEventListener('resize', resize);
+
+      function drawLayer(cx, cy, r, petals, t, alpha) {
+        ctx.save();
+        ctx.globalAlpha = alpha;
+        ctx.strokeStyle = '#d4a853';
+        ctx.lineWidth = 0.5;
+        ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.stroke();
+        for (let i = 0; i < petals; i++) {
+          const a = (i / petals) * Math.PI * 2 + t;
+          const a2 = a + Math.PI * 2 / petals;
+          ctx.beginPath();
+          ctx.moveTo(cx, cy);
+          ctx.quadraticCurveTo(
+            cx + Math.cos(a) * r, cy + Math.sin(a) * r,
+            cx + Math.cos(a2) * r, cy + Math.sin(a2) * r
+          );
+          ctx.stroke();
+        }
+        ctx.restore();
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
+        const t = frame * 0.001;
+        drawLayer(W / 2, H / 2, 250, 12, t, 0.4);
+        drawLayer(W / 2, H / 2, 150, 8, -t * 1.3, 0.3);
+        drawLayer(W / 2, H / 2, 80, 6, t * 2, 0.2);
+        frame++;
+        requestAnimationFrame(draw);
+      }
+      draw();
+    })();
+
+    // ── Analytics: scroll depth + engagement time ──
     const depths = [25, 50, 75];
-    const fired = new Set();
+    const firedDepths = new Set();
     window.addEventListener('scroll', () => {
       const pct = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
       depths.forEach(d => {
-        if (pct >= d && !fired.has(d)) {
-          fired.add(d);
-          window.trackEvent('scroll_depth_reached', {
-            depth_percent: d,
-            page_path: window.location.pathname
-          });
+        if (pct >= d && !firedDepths.has(d)) {
+          firedDepths.add(d);
+          window.trackEvent('scroll_depth_reached', { depth_percent: d });
         }
       });
     });
-
-    // 📊 Track time on page (Engagement for Ads)
-    [30, 60, 120].forEach(sec => {
-      setTimeout(() => {
-        window.trackEvent('engagement_time_reached', {
-          seconds: sec,
-          engagement_level: sec >= 60 ? 'high' : 'medium'
-        });
-      }, sec * 1000);
-    });
+    [30, 60, 120].forEach(s =>
+      setTimeout(() => window.trackEvent('engagement_time_reached', { seconds: s }), s * 1000)
+    );
   </script>
-
 </body>
 
 </html>
