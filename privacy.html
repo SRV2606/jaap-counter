@@ -1,577 +1,424 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy &#8211; Jaap Mantra &amp; Meditation</title>
-  <meta name="description"
-    content="Privacy Policy for Jaap – Mantra & Meditation, an Android app by Daily App Studios. Learn how we handle your data." />
-  
-  <!-- Vercel Web Analytics -->
-  <script>
-    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-  </script>
+  <title>Privacy Policy – Jaap Mantra &amp; Meditation</title>
+  <meta name="description" content="Privacy Policy for Jaap – Mantra &amp; Meditation, an Android app by Daily App Studios. Learn exactly what data we collect and how we use it." />
+  <link rel="canonical" href="https://jaap.memefarm.in/privacy.html" />
+
+  <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>
   <script defer src="/_vercel/insights/script.js"></script>
+  <script>window.si=window.si||function(){(window.siq=window.siq||[]).push(arguments)};</script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
   <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #0d0c0e;
-      --border: rgba(255, 255, 255, 0.07);
-      --text-primary: #e8e3dc;
+      --bg:             #0d0c0e;
+      --border:         rgba(255,255,255,.07);
+      --text-primary:   #e8e3dc;
       --text-secondary: #8a8079;
-      --accent: #c9a96e;
-      --accent-hover: #e0bc7a;
-      --accent-dim: rgba(201, 169, 110, 0.10);
+      --accent:         #c9a96e;
+      --accent-hover:   #e0bc7a;
+      --accent-dim:     rgba(201,169,110,.10);
     }
 
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-    }
+    html { scroll-behavior: smooth; font-size: 16px; }
 
     body {
-      background: var(--bg);
-      color: var(--text-primary);
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      line-height: 1.75;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      background: var(--bg); color: var(--text-primary);
+      font-family: 'DM Sans', sans-serif; font-weight: 300;
+      line-height: 1.75; min-height: 100vh;
+      display: flex; flex-direction: column;
     }
 
-    /* Background Glow */
     body::before {
-      content: '';
-      position: fixed;
-      top: -20vh;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100vw;
-      height: 100vh;
-      background: radial-gradient(ellipse at top, rgba(201, 169, 110, 0.06) 0%, transparent 60%);
-      pointer-events: none;
-      z-index: -1;
+      content: ''; position: fixed; top: -20vh; left: 50%; transform: translateX(-50%);
+      width: 100vw; height: 100vh;
+      background: radial-gradient(ellipse at top, rgba(201,169,110,.06) 0%, transparent 60%);
+      pointer-events: none; z-index: -1;
     }
 
-    /* Navigation */
     nav {
-      position: sticky;
-      top: 0;
-      width: 100%;
-      z-index: 100;
-      background: rgba(13, 12, 14, 0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      position: sticky; top: 0; width: 100%; z-index: 100;
+      background: rgba(13,12,14,.88); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
-      padding: 0 clamp(1.5rem, 5vw, 4rem);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 70px;
+      padding: 0 clamp(1.5rem,5vw,4rem);
+      display: flex; align-items: center; justify-content: space-between; height: 70px;
     }
-
     .nav-brand {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      letter-spacing: 0.12em;
-      color: var(--accent);
-      text-decoration: none;
-      text-transform: uppercase;
-      font-weight: 600;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;
+      letter-spacing: .12em; color: var(--accent); text-decoration: none;
+      text-transform: uppercase; font-weight: 600;
     }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-      align-items: center;
-    }
-
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
     .nav-links a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 0.85rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: color 0.3s ease;
+      color: var(--text-secondary); text-decoration: none; font-size: .85rem;
+      letter-spacing: .08em; text-transform: uppercase; transition: color .3s;
     }
-
-    .nav-links a:hover,
-    .nav-links a[aria-current="page"] {
-      color: var(--text-primary);
-    }
-
+    .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--text-primary); }
     .cta-button-small {
-      background: var(--accent);
-      color: var(--bg);
-      padding: 0.5rem 1.25rem;
-      border-radius: 4px;
-      font-weight: 500;
-      font-size: 0.8rem;
-      transition: all 0.3s ease;
+      background: var(--accent); color: var(--bg) !important;
+      padding: .5rem 1.25rem; border-radius: 4px; font-weight: 500; font-size: .8rem;
+      transition: all .3s;
     }
-
     .cta-button-small:hover {
-      background: var(--accent-hover);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(201, 169, 110, 0.2);
+      background: var(--accent-hover); transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(201,169,110,.22);
     }
-
-    @media (max-width: 768px) {
-      .nav-links li:not(:last-child) {
-        display: none;
-      }
-    }
+    @media (max-width:768px) { .nav-links li:not(:last-child) { display: none; } }
 
     main {
-      flex: 1;
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      max-width: 760px;
-      margin: 0 auto;
-      padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 2rem) clamp(4rem, 10vw, 8rem);
-      animation: fadeIn 0.8s ease-out forwards;
+      flex: 1; position: relative; z-index: 1;
+      width: 100%; max-width: 760px; margin: 0 auto;
+      padding: clamp(3rem,8vw,6rem) clamp(1.5rem,5vw,2rem) clamp(4rem,10vw,8rem);
+      animation: fadeIn .8s ease-out forwards;
     }
 
     .eyebrow {
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.2rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
+      font-size: .75rem; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 1.2rem;
+      display: inline-flex; align-items: center; gap: .5rem;
     }
-
-    .eyebrow::before {
-      content: '';
-      width: 24px;
-      height: 1px;
-      background: var(--accent);
-      opacity: 0.5;
-    }
+    .eyebrow::before { content:''; width:24px; height:1px; background:var(--accent); opacity:.5; }
 
     h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.8rem, 7vw, 4.5rem);
-      font-weight: 300;
-      line-height: 1.1;
-      color: var(--text-primary);
-      margin-bottom: 2.5rem;
+      font-size: clamp(2.8rem,7vw,4.5rem); font-weight: 300; line-height: 1.1;
+      color: var(--text-primary); margin-bottom: 1.5rem;
     }
 
-    .divider {
-      width: 60px;
-      height: 1px;
-      background: var(--accent);
-      opacity: 0.5;
-      margin-bottom: 2.5rem;
+    .meta-line {
+      font-size: .82rem; color: var(--text-secondary); margin-bottom: 2.5rem; letter-spacing: .04em;
     }
+    .meta-line strong { color: var(--accent); font-weight: 500; }
 
-    p {
-      font-size: 1.05rem;
-      margin-bottom: 1.5rem;
-      opacity: 0.9;
-      line-height: 1.8;
-    }
+    .divider { width: 60px; height: 1px; background: var(--accent); opacity: .5; margin-bottom: 2.5rem; }
 
-    section {
-      margin-bottom: 3rem;
-    }
+    p { font-size: 1.05rem; margin-bottom: 1.5rem; opacity: .9; line-height: 1.8; }
+
+    section { margin-bottom: 3rem; }
 
     h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.75rem;
-      font-weight: 400;
-      color: var(--text-primary);
-      margin-bottom: 1.5rem;
-      padding-bottom: 0.8rem;
-      border-bottom: 1px solid var(--border);
+      font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 400;
+      color: var(--text-primary); margin-bottom: 1.5rem;
+      padding-bottom: .8rem; border-bottom: 1px solid var(--border);
     }
 
     .list-group {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-      margin: 1rem 0 1.5rem;
-      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+      margin: 1rem 0 1.5rem; background: rgba(255,255,255,.02);
     }
-
-    .list-group.negative {
-      border-color: rgba(255, 255, 255, 0.05);
-      background: rgba(0, 0, 0, 0.2);
-    }
+    .list-group.negative { border-color: rgba(255,255,255,.05); background: rgba(0,0,0,.2); }
 
     .list-item {
-      padding: 1rem 1.25rem;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.95rem;
-      color: var(--text-primary);
-      opacity: 0.88;
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      line-height: 1.6;
+      padding: 1rem 1.25rem; border-bottom: 1px solid var(--border);
+      font-size: .95rem; color: var(--text-primary); opacity: .88;
+      display: flex; align-items: flex-start; gap: 1rem; line-height: 1.6;
     }
-
-    .list-item:last-child {
-      border-bottom: none;
-    }
-
+    .list-item:last-child { border-bottom: none; }
     .list-item::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-      margin-top: 0.55rem;
-      opacity: 0.8;
+      content:''; width:6px; height:6px; border-radius:50%;
+      background: var(--accent); flex-shrink:0; margin-top:.55rem; opacity:.8;
     }
-
-    .list-group.negative .list-item::before {
-      background: var(--text-secondary);
-      opacity: 0.5;
-    }
+    .list-group.negative .list-item::before { background: var(--text-secondary); opacity:.5; }
 
     .sublabel {
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      margin-bottom: 0.75rem;
-      margin-top: 1.5rem;
+      font-size: .75rem; letter-spacing: .15em; text-transform: uppercase;
+      color: var(--text-secondary); margin-bottom: .75rem; margin-top: 1.5rem;
     }
 
     .perm-label {
-      font-weight: 500;
-      color: var(--accent);
-      min-width: 140px;
-      display: inline-block;
+      font-weight: 500; color: var(--accent); min-width: 160px; display: inline-block;
     }
+
+    /* Supabase data table */
+    .data-table-wrap { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin: 1rem 0 1.5rem; }
+    .data-table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+    .data-table th {
+      text-align: left; padding: .75rem 1rem; font-size: .72rem; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--text-secondary); font-weight: 500;
+      border-bottom: 1px solid var(--border); background: rgba(255,255,255,.015);
+    }
+    .data-table td {
+      padding: .85rem 1rem; border-bottom: 1px solid var(--border);
+      color: var(--text-primary); opacity: .88; line-height: 1.55; vertical-align: top;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table td:first-child { color: var(--accent); font-weight: 500; white-space: nowrap; }
 
     .contact-block {
-      background: var(--accent-dim);
-      border: 1px solid rgba(201, 169, 110, 0.2);
-      border-radius: 8px;
-      padding: 1.5rem;
-      font-size: 1rem;
-      margin-top: 1rem;
+      background: var(--accent-dim); border: 1px solid rgba(201,169,110,.2);
+      border-radius: 8px; padding: 1.5rem; font-size: 1rem; margin-top: 1rem;
     }
+    .contact-block a { color: var(--accent); text-decoration: none; word-break: break-all; font-weight: 500; }
+    .contact-block a:hover { text-decoration: underline; }
 
-    .contact-block a {
-      color: var(--accent);
-      text-decoration: none;
-      word-break: break-all;
-      font-weight: 500;
-    }
-
-    .contact-block a:hover {
-      text-decoration: underline;
-    }
-
-    .ext-link {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 400;
-    }
-
-    .ext-link:hover {
-      text-decoration: underline;
-    }
+    .ext-link { color: var(--accent); text-decoration: none; font-weight: 400; }
+    .ext-link:hover { text-decoration: underline; }
 
     footer {
-      position: relative;
-      z-index: 1;
-      border-top: 1px solid var(--border);
-      padding: 2rem clamp(1.5rem, 5vw, 4rem);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
+      position: relative; z-index: 1; border-top: 1px solid var(--border);
+      padding: 2rem clamp(1.5rem,5vw,4rem);
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
     }
+    footer span { font-size: .8rem; color: var(--text-secondary); }
+    footer a { color: var(--text-secondary); text-decoration: none; font-size: .8rem; letter-spacing: .05em; transition: color .3s; }
+    footer a:hover { color: var(--text-primary); }
+    @media (max-width:480px) { footer { flex-direction: column; align-items: center; text-align: center; } }
 
-    footer span {
-      font-size: 0.8rem;
-      color: var(--text-secondary);
-    }
-
-    footer a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 0.8rem;
-      letter-spacing: 0.05em;
-      transition: color 0.3s;
-    }
-
-    footer a:hover {
-      color: var(--text-primary);
-    }
-
-    @media (max-width: 480px) {
-      footer {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-    }
-
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
   </style>
 </head>
-
 <body>
 
-  <nav>
-    <a href="/" class="nav-brand">Jaap</a>
-    <ul class="nav-links">
-      <li><a href="/about.html">About</a></li>
-      <li><a href="/privacy.html" aria-current="page">Privacy</a></li>
-      <li><a href="https://play.google.com/store/apps/details?id=com.memefarm.jaap" target="_blank"
-          class="cta-button-small">Download App</a></li>
-    </ul>
-  </nav>
+<nav>
+  <a href="/" class="nav-brand">Jaap</a>
+  <ul class="nav-links">
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/privacy.html" aria-current="page">Privacy</a></li>
+    <li>
+      <a href="https://play.google.com/store/apps/details?id=com.memefarm.jaap"
+         target="_blank" rel="noopener" class="cta-button-small">Download Free</a>
+    </li>
+  </ul>
+</nav>
 
-  <main>
-    <p class="eyebrow">Daily App Studios</p>
-    <h1>Privacy Policy</h1>
-    <div class="divider"></div>
+<main>
+  <p class="eyebrow">Daily App Studios</p>
+  <h1>Privacy Policy</h1>
+  <p class="meta-line">Last updated: <strong>June 2025</strong> &nbsp;·&nbsp; App: <strong>Jaap – Mantra &amp; Meditation</strong></p>
+  <div class="divider"></div>
 
-    <section>
-      <p>Daily App Studios built the Jaap &#8211; Mantra &amp; Meditation app as a free application. This page informs
-        users regarding our policies on the collection, use, and disclosure of information when using the app.</p>
-      <p>Protecting your privacy is a core value of Jaap. The app is designed to collect only the minimal data required
-        for functionality, improvement, and advertising.</p>
-    </section>
+  <section>
+    <p>Daily App Studios built the Jaap – Mantra &amp; Meditation app as a free application. This page explains exactly what data we collect, why we collect it, and how it is handled.</p>
+    <p>Protecting your privacy is a core value of Jaap. The app is designed to collect only the minimal data required for functionality, improvement, and cloud backup — and your spiritual practice data always stays yours.</p>
+  </section>
 
-    <section>
-      <h2>Information We Collect</h2>
-      <p class="sublabel">Jaap may collect the following information</p>
-      <div class="list-group">
-        <div class="list-item">Anonymous app interaction and usage data (via Firebase Analytics)</div>
-        <div class="list-item">Crash and error reports (via Firebase Crashlytics)</div>
-        <div class="list-item">Device tokens used for optional push notifications (via Firebase Cloud Messaging)</div>
-        <div class="list-item">Device advertising identifier, used by Google AdMob to serve relevant advertisements
-        </div>
-        <div class="list-item">Approximate location, collected on-device and used solely to improve app features such as
-          the Hindu Calendar and Panchang. This data is not transmitted to or stored on our servers.</div>
-        <div class="list-item">Voice audio, captured when you use the voice-based mantra chanting feature. Audio is sent
-          to Google&#8217;s Speech Recognition service for transcription. Jaap does not store or retain any audio
-          recordings or transcription results.</div>
-        <div class="list-item">Device-based Identity (Hashed): Jaap generates a stable, device-scoped identifier using
-          your device&#8217;s Android ID, which is then SHA-256 hashed before being used for data synchronization. Your
-          original device ID is never transmitted.</div>
-      </div>
-      <p class="sublabel">Jaap does not collect</p>
-      <div class="list-group negative">
-        <div class="list-item">Your name, email address, or any personal identity information</div>
-        <div class="list-item">Contacts or address book data</div>
-        <div class="list-item">Health or medical data</div>
-        <div class="list-item">Payment or financial information</div>
-      </div>
-    </section>
+  <!-- 1. What We Collect -->
+  <section>
+    <h2>Information We Collect</h2>
+    <p class="sublabel">Collected automatically by the app</p>
+    <div class="list-group">
+      <div class="list-item">Anonymous app interaction and usage data (via Firebase Analytics)</div>
+      <div class="list-item">Crash and error reports (via Firebase Crashlytics)</div>
+      <div class="list-item">Device tokens for optional push notifications (via Firebase Cloud Messaging)</div>
+      <div class="list-item">Device advertising identifier, used by Google AdMob to serve relevant advertisements</div>
+      <div class="list-item">Approximate location — processed on-device only to power the Hindu Calendar and Panchang features. <strong>Location is never transmitted to our servers.</strong></div>
+      <div class="list-item">Voice audio — captured when you use voice-based mantra chanting. Sent to Google's Speech Recognition service for transcription only. Jaap does not record, store, or retain any audio or transcription results.</div>
+      <div class="list-item">A stable hashed device identifier — your Android ID is SHA-256 hashed before any use. The raw Android ID is never transmitted or stored.</div>
+    </div>
 
-    <section>
-      <h2>User-Created Content</h2>
-      <p>When you create a custom mantra using the Create Mantra feature, the text and any associated intention you
-        enter are stored locally on your device only. This content is not transmitted to our servers or shared with any
-        third party, except when you choose to use the AI enrichment feature, in which case the mantra text may be sent
-        to Google Generative AI to generate additional context.</p>
-    </section>
+    <p class="sublabel">Synced to our cloud database (Supabase)</p>
+    <p>To preserve your practice data across reinstalls and devices, certain information is securely backed up to Supabase. See the <a href="#cloud-sync" class="ext-link">Cloud Synchronisation</a> section for the full breakdown.</p>
 
-    <section>
-      <h2>How We Use Information</h2>
-      <p>Collected information is used solely to:</p>
-      <div class="list-group">
-        <div class="list-item">Improve app stability and performance</div>
-        <div class="list-item">Understand feature usage patterns to improve the app</div>
-        <div class="list-item">Provide localised Hindu Calendar, Panchang, and auspicious date information using
-          on-device location context</div>
-        <div class="list-item">Enable voice-based mantra counting by transcribing your spoken chants</div>
-        <div class="list-item">Deliver optional app notifications</div>
-        <div class="list-item">Display relevant advertisements via Google AdMob</div>
-      </div>
-    </section>
+    <p class="sublabel">Jaap does not collect</p>
+    <div class="list-group negative">
+      <div class="list-item">Your email address, phone number, or any login credentials</div>
+      <div class="list-item">Contacts or address book data</div>
+      <div class="list-item">Health or medical data</div>
+      <div class="list-item">Payment or financial information</div>
+      <div class="list-item">Raw device identifiers — only a one-way SHA-256 hash of your Android ID is ever used</div>
+    </div>
+  </section>
 
-    <section>
-      <h2>Third-Party Services</h2>
-      <p>Jaap uses the following third-party services. Each may collect data as described in their respective privacy
-        policies.</p>
-      <div class="list-group">
-        <div class="list-item">Firebase Analytics &#8211; anonymous usage analytics</div>
-        <div class="list-item">Firebase Crashlytics &#8211; crash and error reporting</div>
-        <div class="list-item">Firebase Cloud Messaging &#8211; optional push notifications</div>
-        <div class="list-item">Supabase &#8211; powers secure data synchronization for your mantras, sessions, and
-          profile data.</div>
-        <div class="list-item">Google AdMob &#8211; in-app advertisements, including banner and rewarded video ads.
-          AdMob may collect your device advertising identifier.</div>
-        <div class="list-item">Google Speech Recognition &#8211; transcribes voice audio for the mantra chanting
-          feature. Audio is processed by Google and is subject to Google&#8217;s privacy policy. Jaap does not retain
-          any audio or transcription data.</div>
-        <div class="list-item">Google Generative AI &#8211; powers Panchang, Rashi astrology, Daily Hindu Calendar
-          content, and optional mantra enrichment</div>
-      </div>
-    </section>
+  <!-- 2. Cloud Sync -->
+  <section id="cloud-sync">
+    <h2>Cloud Synchronisation</h2>
+    <p>Jaap uses <strong>Supabase</strong> as its cloud database to back up your practice data. This allows your progress to be restored if you reinstall the app or change devices — with no account or login required.</p>
+    <p>All data is associated with a <strong>SHA-256 hashed device identifier</strong>, never your name or email. The exact fields synced are:</p>
 
-    <section>
-      <h2>Cloud Synchronization</h2>
-      <p>To ensure your spiritual journey is never lost, Jaap uses a background synchronization service powered by
-        Supabase. This service securely backs up the following data:</p>
-      <div class="list-group">
-        <div class="list-item"><span class="perm-label">Profile Information</span> Your display name is encrypted
-          on-device before being synced to ensure your identity remains private.</div>
-        <div class="list-item"><span class="perm-label">Mantra Progress</span> We sync your lifetime counts, current
-          streaks, and total chanting duration to keep your milestones accurate.</div>
-        <div class="list-item"><span class="perm-label">Custom Mantras</span> Any mantras you create (including their
-          titles and text) are synced to allow you to restore them if you reinstall the app.</div>
-        <div class="list-item"><span class="perm-label">Session Logs</span> We sync anonymous session data, including
-          the mantra practiced, duration, and count, for progress tracking.</div>
-      </div>
-      <p>All data transmitted to Supabase is associated with a hashed device identifier. This allows us to offer data
-        persistence without requiring a traditional login or collecting personal identification such as email or phone
-        numbers.</p>
-    </section>
+    <div class="data-table-wrap">
+      <table class="data-table" aria-label="Data fields synced to Supabase">
+        <thead>
+          <tr>
+            <th>Field</th>
+            <th>What it is</th>
+            <th>How it's protected</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Device ID</td>
+            <td>A SHA-256 hash of your Android ID — the unique key for your cloud record. Never your raw device ID.</td>
+            <td>One-way hash — cannot be reversed</td>
+          </tr>
+          <tr>
+            <td>Display Name</td>
+            <td>The name you optionally set in the app (defaults to "Devotee" if not changed).</td>
+            <td>AES-encrypted on-device before transmission</td>
+          </tr>
+          <tr>
+            <td>Lifetime Count</td>
+            <td>Your total chant count across all mantras and all time.</td>
+            <td>Plain number, no personal link</td>
+          </tr>
+          <tr>
+            <td>Total Duration</td>
+            <td>Your total chanting time in seconds across all sessions.</td>
+            <td>Plain number, no personal link</td>
+          </tr>
+          <tr>
+            <td>Streak (days)</td>
+            <td>Number of consecutive days you have practiced.</td>
+            <td>Plain number, no personal link</td>
+          </tr>
+          <tr>
+            <td>City</td>
+            <td>The city name you optionally save for Panchang and Calendar personalisation. Not your GPS coordinates.</td>
+            <td>Plain city name only</td>
+          </tr>
+          <tr>
+            <td>Custom Mantras</td>
+            <td>Mantras you create — their title and text. System mantras from the library are not synced.</td>
+            <td>Linked to your hashed device ID only</td>
+          </tr>
+          <tr>
+            <td>Session Logs</td>
+            <td>Individual chanting sessions — which mantra you practiced, duration (ms), chant count, and timestamp.</td>
+            <td>Linked to your hashed device ID. No location or audio data.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-    <section>
-      <h2>Advertising</h2>
-      <p>Jaap displays advertisements provided by Google AdMob, including banner ads and rewarded video ads. Rewarded
-        ads may be shown when you have reached the free limit for custom mantras; watching a rewarded ad allows you to
-        continue using the feature.</p>
-      <p>AdMob may use your device advertising identifier and other non-personal data to serve contextually relevant
-        ads. Jaap does not share personal data with advertisers. You can opt out of personalised advertising at any time
-        through your device settings under <em>Google &rsaquo; Ads</em>.</p>
-      <p>For more information on how Google uses data from apps that use its services, visit <a
-          href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener"
-          class="ext-link">Google&#8217;s Privacy &amp; Terms</a>.</p>
-    </section>
+    <p>Sync runs automatically in the background when your device has an internet connection. To request deletion of your cloud data, contact us at the email address below.</p>
+  </section>
 
-    <section>
-      <h2>Voice Recognition</h2>
-      <p>The voice-based mantra chanting feature uses Android&#8217;s SpeechRecognizer, which is powered by
-        Google&#8217;s Speech Recognition service. When you chant a mantra aloud, your voice audio is transmitted to
-        Google&#8217;s servers for transcription. The resulting text is used only to match your chant against the
-        selected mantra and increment your count.</p>
-      <p>Jaap does not record, store, or retain any audio or transcription data. The audio is processed transiently by
-        Google and is subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener"
-          class="ext-link">Google&#8217;s Privacy Policy</a>.</p>
-    </section>
+  <!-- 3. User-Created Content -->
+  <section>
+    <h2>User-Created Content</h2>
+    <p>When you create a custom mantra, the text and intention are stored locally on your device and synced to Supabase under your hashed device ID as described above. This content is not shared with any third party except:</p>
+    <div class="list-group">
+      <div class="list-item">If you use the optional <strong>AI Enrichment</strong> feature, the mantra text is sent to Google Generative AI to generate additional context (meaning, benefits). This is optional and triggered only on your explicit action.</div>
+    </div>
+  </section>
 
-    <section>
-      <h2>AI-Powered Features</h2>
-      <p>Jaap uses Google Generative AI to provide content for the following features:</p>
-      <div class="list-group">
-        <div class="list-item">Panchang &#8211; daily Hindu almanac information</div>
-        <div class="list-item">Rashi &#8211; zodiac and astrology guidance</div>
-        <div class="list-item">Daily Hindu Calendar &#8211; auspicious dates, tithi, and festival information</div>
-        <div class="list-item">Custom Mantra Enrichment &#8211; optional additional context for mantras you create</div>
-      </div>
-      <p>When you access these features, your request context (such as date, time, selected preferences, or mantra text)
-        may be sent to Google&#8217;s Generative AI services to generate a response. No personal identity information,
-        retained audio data, or sensitive personal data is included in these requests.</p>
-      <p>Content generated by Google Generative AI is provided for informational and spiritual reference only. Jaap does
-        not guarantee the accuracy of AI-generated content, and it should not be relied upon as authoritative religious,
-        predictive, or professional guidance. Use of these features is subject to <a
-          href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="ext-link">Google&#8217;s
-          Privacy Policy</a>.</p>
-    </section>
+  <!-- 4. How We Use Information -->
+  <section>
+    <h2>How We Use Information</h2>
+    <div class="list-group">
+      <div class="list-item">Improve app stability and performance via crash and usage analytics</div>
+      <div class="list-item">Understand which features are used most to guide product improvements</div>
+      <div class="list-item">Provide localised Hindu Calendar, Panchang, and auspicious timings using on-device location</div>
+      <div class="list-item">Enable voice-based mantra counting via Google Speech Recognition</div>
+      <div class="list-item">Back up and restore your spiritual practice data across devices via Supabase</div>
+      <div class="list-item">Send optional practice reminders and auspicious timing notifications</div>
+      <div class="list-item">Display relevant advertisements via Google AdMob</div>
+    </div>
+  </section>
 
-    <section>
-      <h2>App Permissions</h2>
-      <p>Jaap requests the following Android permissions to enable its features:</p>
-      <div class="list-group">
-        <div class="list-item"><span class="perm-label">Microphone</span> To enable voice-based mantra chanting. Audio
-          is sent to Google&#8217;s Speech Recognition service for transcription and is not stored by Jaap.</div>
-        <div class="list-item"><span class="perm-label">Notifications</span> To send optional app updates and reminders.
-          Can be disabled at any time in device settings.</div>
-        <div class="list-item"><span class="perm-label">Location</span> Used on-device to provide localised Hindu
-          Calendar and Panchang information. Location data is not transmitted to our servers or shared with third
-          parties.</div>
-        <div class="list-item"><span class="perm-label">Vibration</span> To provide haptic feedback during mantra
-          chanting sessions, helping you maintain rhythm and awareness.</div>
-        <div class="list-item"><span class="perm-label">Internet</span> Required for analytics, crash reporting, ad
-          delivery, AI-powered features, voice recognition, and notification services.</div>
-        <div class="list-item"><span class="perm-label">Network State</span> Used to check connectivity before making
-          network requests, preventing unnecessary errors.</div>
-      </div>
-      <p>All permissions are used strictly for the purposes described above. You may revoke any permission at any time
-        through your device&#8217;s app settings.</p>
-    </section>
+  <!-- 5. Third-Party Services -->
+  <section>
+    <h2>Third-Party Services</h2>
+    <p>Jaap integrates the following third-party services, each governed by their own privacy policies.</p>
+    <div class="list-group">
+      <div class="list-item"><span class="perm-label">Firebase Analytics</span> Anonymous usage analytics</div>
+      <div class="list-item"><span class="perm-label">Firebase Crashlytics</span> Crash and error reporting</div>
+      <div class="list-item"><span class="perm-label">Firebase Messaging</span> Optional push notifications</div>
+      <div class="list-item"><span class="perm-label">Supabase</span> Cloud database — stores hashed device ID, encrypted name, progress metrics, custom mantras, and anonymous session logs. Protected by Row Level Security.</div>
+      <div class="list-item"><span class="perm-label">Google AdMob</span> Banner and rewarded video ads. May collect your device advertising identifier.</div>
+      <div class="list-item"><span class="perm-label">Google Speech</span> Transcribes voice audio for mantra chanting. Jaap retains no audio or transcription data.</div>
+      <div class="list-item"><span class="perm-label">Google Gen AI</span> Powers Panchang, Rashi horoscope, Hindu Calendar, and optional mantra enrichment.</div>
+    </div>
+  </section>
 
-    <section>
-      <h2>Notifications</h2>
-      <p>Jaap may send optional notifications related to your practice, auspicious dates, or app updates. Notifications
-        are entirely optional and can be disabled at any time through your device settings.</p>
-    </section>
+  <!-- 6. Advertising -->
+  <section>
+    <h2>Advertising</h2>
+    <p>Jaap displays advertisements via Google AdMob, including banner ads and rewarded video ads. Rewarded ads are shown to unlock astrology features (Panchang and daily Horoscope) beyond the free daily limit.</p>
+    <p>AdMob may use your device advertising identifier and other non-personal data to serve contextually relevant ads. Jaap does not share personal data with advertisers. You can opt out of personalised advertising at any time through your device settings under <em>Google › Ads</em>.</p>
+    <p>For more information, visit <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener" class="ext-link">Google's Privacy &amp; Terms</a>.</p>
+  </section>
 
-    <section>
-      <h2>Data Security</h2>
-      <p>Jaap takes reasonable measures to protect user data. No sensitive or personal data is stored by the application
-        on our servers. Location data is processed on-device only. User-created content such as custom mantras is stored
-        locally on your device.</p>
-    </section>
+  <!-- 7. Voice Recognition -->
+  <section>
+    <h2>Voice Recognition</h2>
+    <p>The voice chanting feature uses Android's SpeechRecognizer, powered by Google's Speech Recognition service. When you chant aloud, audio is transmitted to Google's servers for transcription only — the result is used solely to match your chant and increment your count.</p>
+    <p>Jaap does not record, store, or retain any audio or transcription data. Audio is processed transiently by Google and is subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="ext-link">Google's Privacy Policy</a>.</p>
+  </section>
 
-    <section>
-      <h2>Children&#8217;s Privacy</h2>
-      <p>Jaap is not directed at children under the age of 13. The app does not knowingly collect personal data from
-        children. If you believe a child has provided personal information through the app, please contact us and we
-        will take steps to remove it.</p>
-    </section>
+  <!-- 8. AI Features -->
+  <section>
+    <h2>AI-Powered Features</h2>
+    <p>Jaap uses Google Generative AI to power:</p>
+    <div class="list-group">
+      <div class="list-item">Panchang — daily Hindu almanac personalised to your birth details and city</div>
+      <div class="list-item">Rashi — zodiac and daily astrology guidance</div>
+      <div class="list-item">Daily Hindu Calendar — tithis, auspicious dates, and festival information</div>
+      <div class="list-item">Custom Mantra Enrichment — optional AI-generated meaning and benefits</div>
+    </div>
+    <p>When you access these features, your request context (date, city, Rashi, birth details, or mantra text) is sent to Google's Generative AI. No raw device IDs, retained audio, or sensitive personal data is included. AI-generated content is for informational and spiritual reference only and should not be treated as authoritative religious or professional guidance.</p>
+  </section>
 
-    <section>
-      <h2>Changes to This Privacy Policy</h2>
-      <p>This Privacy Policy may be updated from time to time. Any changes will be reflected on this page. We encourage
-        you to review this page periodically.</p>
-      <p>This policy was last updated in 2025.</p>
-    </section>
+  <!-- 9. Permissions -->
+  <section>
+    <h2>App Permissions</h2>
+    <div class="list-group">
+      <div class="list-item"><span class="perm-label">Microphone</span> Voice-based mantra chanting. Audio sent to Google Speech — not stored by Jaap.</div>
+      <div class="list-item"><span class="perm-label">Notifications</span> Optional practice reminders and auspicious timing alerts. Disable any time in device settings.</div>
+      <div class="list-item"><span class="perm-label">Location</span> On-device only for Hindu Calendar and Panchang localisation. Never transmitted to our servers.</div>
+      <div class="list-item"><span class="perm-label">Vibration</span> Haptic feedback during chanting sessions.</div>
+      <div class="list-item"><span class="perm-label">Internet</span> Required for analytics, crash reporting, ads, AI features, voice recognition, notifications, and Supabase sync.</div>
+      <div class="list-item"><span class="perm-label">Network State</span> Checks connectivity before network requests to prevent unnecessary errors.</div>
+    </div>
+    <p>You may revoke any permission at any time through your device's app settings.</p>
+  </section>
 
-    <section>
-      <h2>Contact Us</h2>
-      <p>If you have any questions about this Privacy Policy, you may contact:</p>
-      <div class="contact-block">
-        <a href="mailto:sourav.kr.shaw+jaap.support&#64;gmail.com">sourav.kr.shaw+jaap.support&#64;gmail.com</a>
-      </div>
-    </section>
-  </main>
+  <!-- 10. Retention & Deletion -->
+  <section>
+    <h2>Data Retention &amp; Deletion</h2>
+    <p>Your synced Supabase data is retained while the app is actively used. If you wish to delete your cloud data, contact us at the email below and we will remove all records associated with your hashed device ID within 30 days.</p>
+    <p>Uninstalling the app removes all locally stored data. It does not automatically delete your Supabase cloud records — please contact us separately if you want those removed.</p>
+  </section>
 
-  <footer>
-    <span>&#169; Daily App Studios &middot; Sourav Kumar Shaw</span>
-    <a href="/about">About Jaap</a>
-  </footer>
+  <!-- 11. Security -->
+  <section>
+    <h2>Data Security</h2>
+    <div class="list-group">
+      <div class="list-item">Your display name is AES-encrypted on-device before being transmitted to Supabase</div>
+      <div class="list-item">Your Android ID is SHA-256 hashed — the raw ID is never transmitted or stored</div>
+      <div class="list-item">Location data is processed on-device only and never sent to our servers</div>
+      <div class="list-item">Supabase enforces Row Level Security — records are only accessible via the matching hashed device ID</div>
+      <div class="list-item">All Supabase API communication uses HTTPS/TLS encryption</div>
+    </div>
+  </section>
 
-  <!-- Vercel Speed Insights -->
-  <script>
-    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-  </script>
-  <script defer src="/_vercel/speed-insights/script.js"></script>
+  <!-- 12. Children -->
+  <section>
+    <h2>Children's Privacy</h2>
+    <p>Jaap is not directed at children under the age of 13. We do not knowingly collect personal data from children. If you believe a child has provided information through the app, please contact us and we will take steps to remove it promptly.</p>
+  </section>
+
+  <!-- 13. Changes -->
+  <section>
+    <h2>Changes to This Policy</h2>
+    <p>This Privacy Policy may be updated to reflect changes in the app or applicable law. Any changes will be reflected on this page with an updated date. We encourage you to review this page periodically.</p>
+  </section>
+
+  <!-- 14. Contact -->
+  <section>
+    <h2>Contact Us</h2>
+    <p>Questions about this Privacy Policy, requests to delete your data, or any privacy concerns:</p>
+    <div class="contact-block">
+      <a href="mailto:sourav.kr.shaw+jaap.support@gmail.com">sourav.kr.shaw+jaap.support@gmail.com</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>&copy; 2025 Daily App Studios &middot; Sourav Kumar Shaw</span>
+  <div style="display:flex;gap:2rem;flex-wrap:wrap;">
+    <a href="/">Home</a>
+    <a href="/about.html">About Jaap</a>
+  </div>
+</footer>
 
 </body>
-
 </html>
